@@ -14,60 +14,31 @@
 </head>
 
 <body>
-  <div id="quiz-view" class="screen">
-    <header class="screen__header">
-      <!-- <section class="screen__info">
-        <div class="progress">
-          <div class="progress__bar">
-            <div class="progress__fill" style="width: 10%"></div>
-          </div>
-          <div class="progress__status">
-            <span class="progress__count">20 / 200</span>
-            <span class="progress__percent">10%</span>
-          </div>
-        </div>
-        <div class="timer">
-          <svg class="timer__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#000000"
-            stroke-linecap="round" stroke-linejoin="round" id="Clock-4--Streamline-Lucide" height="24" width="24">
-            <desc>
-              Clock 4 Streamline Icon: https://streamlinehq.com
-            </desc>
-            <path d="M2 12a10 10 0 1 0 20 0 10 10 0 1 0 -20 0" stroke-width="2"></path>
-            <path d="m12 6 0 6 4 2" stroke-width="2"></path>
-          </svg>
-          <span class="timer__seconds">30</span>
-        </div>
-      </section> -->
-    </header>
-    <section class="screen__question">
-      <div class="divider">
-        <section class="question">
-          <h3 class="question__number">02</h3>
-          <section class="question__info">
-            <h2 class="question__category">HTML</h2>
-            <h1 class="question__name">What is the purpose of the fieldset and legend elements in HTML forms, and how
-              they used &quest;</h1>
-          </section>
 
-          <!-- <p class="question__description"></p> -->
-        </section>
-        <section class="options">
-          <div class="option option--a">
-            <span class="option__letter">A.</span>
-            <p>To create a collapsible dropdown in a form</p>
-          </div>
-          <div class="option option--b">
-            <span class="option__letter">B.</span>
-            <p> To group related inputs and provide a label for the group </p>
-          </div>
-          <div class="option option--c">
-            <span class="option__letter">C.</span>
-            <p> To style form buttons with CSS </p>
-          </div>
-        </section>
-      </div>
-    </section>
+  <!--Start screen-->
+  <div id="start-screen" class="screen hidden">
+    <!-- Start screen content: user enters name, selects categories -->
   </div>
+
+
+  <!--User screen-->
+  <div id="user-screen" class="screen hidden">
+    <!-- Start screen content: user enters name, selects categories -->
+  </div>
+
+
+
+  <!--Quiz screen-->
+  <div id="quiz-screen" class="screen active">
+    <header class="screen__header"></header>
+    <section class="screen__question"></section>
+  </div>
+
+  <!--Highscore screen-->
+  <div id="highscore-screen" class="screen hidden">
+    <!-- Start screen content: user enters name, selects categories -->
+  </div>
+
   <script type="module" src="/src/main.js"></script>
 </body>
 
