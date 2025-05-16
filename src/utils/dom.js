@@ -35,3 +35,10 @@ export function selectElement(selector, parent = document) {
 export function selectElements(selector, parent = document) {
   return Array.from(parent.querySelectorAll(selector));
 }
+
+export function addClasses(el, classNames = []) {
+  if (!Array.isArray(classNames)) {
+    throw new Error("addClasses expects an array of class names");
+  }
+  el.classList.add(...classNames);
+}
