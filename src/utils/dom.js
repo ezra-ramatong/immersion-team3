@@ -23,3 +23,15 @@ export function createButton(text, onClick, classNames = []) {
   btn.addEventListener("click", onClick);
   return btn;
 }
+
+export function selectElement(selector, parent = document) {
+  const el = parent.querySelector(selector);
+  if (!el) {
+    console.warn(`Element not found: ${selector}`);
+  }
+  return el;
+}
+
+export function selectElements(selector, parent = document) {
+  return Array.from(parent.querySelectorAll(selector));
+}
