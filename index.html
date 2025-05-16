@@ -4,10 +4,66 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/styles/style.css" >
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div class="table-rank">
+      <div class="table-header">
+        <h1>Leaderboard</h1>
+        <h4>Choose Category</h4>
+        <select>
+          <option>All Rankings</option>
+          <option>HTML</option>
+          <option>CSS</option>
+          <option>Javascript</option>
+          <option>Gaming and computers</option>
+        </select>
+      </div>
+      <div class="table-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Position</th>
+              <th>Player Name</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><img src="./src/imgs/avatar1.jpg" alt="profile">John Doe</td>
+              <td>400</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><img src="./src/imgs/avatar2.jpg" alt="profile">John Doe</td>
+              <td>400</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td><img src="./src/imgs/avatar1.jpg" alt="profile">John Doe</td>
+              <td>400</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td><img src="./src/imgs/avatar2.jpg" alt="profile">John Doe</td>
+              <td>400</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td><img src="./src/imgs/avatar3.jpg" alt="profile">John Doe</td>
+              <td>400</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td><img src="./src/imgs/avatar4.jpg" alt="profile">John Doe</td>
+              <td>400</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
