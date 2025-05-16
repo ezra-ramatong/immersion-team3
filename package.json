@@ -10,7 +10,7 @@
     "format": "prettier --write \"src/**/*.{js,html,css}\" \"index.html\""
   },
   "devDependencies": {
-    "vite": "^6.3.5"
+    "vite": "^6.3.5",
     "prettier": "^3.5.3"
-  },
+  }
 }
