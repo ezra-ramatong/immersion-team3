@@ -69,6 +69,7 @@ body {
 
 .screen {
   min-height: 100vh;
+  display: grid;
 }
 
 /* Header */
@@ -141,23 +142,21 @@ body {
 
 .screen__question {
   min-height: 88vh;
+  display: flex;
 }
 
-.divider {
+.container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  /* width: 85%; */
-  /* padding-inline: 5rem; */
   height: 88vh;
   margin: 0 auto;
 }
 
 .question {
-  border-right: 0.2rem solid black;
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding-left: 4rem;
+  /* padding-left: 4rem; */
 }
 
 .question__number {
@@ -178,14 +177,15 @@ body {
 .question__name {
   font-weight: 400;
   font-size: 3rem;
+  text-align: center;
 }
 
 /* Options */
 
-.options {
+/* .options__container {
   display: grid;
   grid-template-rows: repeat(3, 1fr);
-}
+} */
 
 .option {
   border-bottom: 0.2rem solid black;
@@ -210,4 +210,21 @@ body {
 .option:hover {
   cursor: pointer;
   background: #7ABAE8;
+}
+
+/* Active and Hidden Classes */
+.hidden {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+
+/* Layouts */
+.multiple-choice {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
 }
