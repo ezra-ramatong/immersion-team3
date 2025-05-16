@@ -27,7 +27,7 @@ section {
   gap: 10rem;
 }
 
-.inactive-intro {
+.welcome-intro-inactive {
   display: none;
 }
 
@@ -46,6 +46,14 @@ section {
   background-color: rgba(15, 150, 239, 0.3);
   width: 20vw;
   margin-top: 2rem;
+}
+
+.user-information {
+  display: none;
+}
+
+.user-information-active {
+  display: block;
 }
 
 .user-information h3 {
