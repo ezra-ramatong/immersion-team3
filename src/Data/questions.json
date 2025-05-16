@@ -1,0 +1,401 @@
+{
+  "Database_Management_System": [
+    {
+      "question": "Which of the following command is used to change data in table?",
+      "options": [
+        "INSERT",
+        "UPDATE",
+        "MERGE",
+        "NONE"
+      ],
+      "answer": "UPDATE"
+    },
+    {
+      "question": "What is rows of a relation known as?",
+      "options": [
+        "Degree",
+        "Entity",
+        "Tuple",
+        "NONE"
+      ],
+      "answer": "Tuple"
+    },
+    {
+      "question": "What is the name of the query that is placed within a WHERE or HAVING clause of another query?",
+      "options": [
+        "Multi query",
+        "Subquery",
+        "Super query",
+        "Master query"
+      ],
+      "answer": "Subquery"
+    },
+    {
+      "question": "What is the use of COUNT in SQL?",
+      "options": [
+        "Returns number of distinct value",
+        "Returns total values",
+        "Returns number of groups",
+        "Returns number of columns"
+      ],
+      "answer": "Returns total values"
+    },
+    {
+      "question": "Which command is used to remove a stored function from the database?",
+      "options": [
+        "DROP",
+        "DELETE",
+        "ERASE",
+        "REMOVE"
+      ],
+      "answer": "DROP"
+    },
+    {
+      "question": "Which data structure is used in Hierarchical model records?",
+      "options": [
+        "Graph",
+        "Tree",
+        "Linked list",
+        "Stacks"
+      ],
+      "answer": "Tree"
+    },
+    {
+      "question": "Which is AS clause used for?",
+      "options": [
+        "Rename",
+        "Selection",
+        "Join",
+        "Projection"
+      ],
+      "answer": "Rename"
+    },
+    {
+      "question": "Which is the lowest level of abstraction that describes how the data are actually stored?",
+      "options": [
+        "Physical",
+        "Abstract",
+        "View",
+        "User"
+      ],
+      "answer": "Physical"
+    },
+    {
+      "question": "What is DBMS?",
+      "options": [
+        "Collection of many programs to access data",
+        "Collection of interrelated data",
+        "Collection of commands",
+        "All"
+      ],
+      "answer": "Collection of interrelated data"
+    },
+    {
+      "question": "SQL stands for Structured Query Language.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "question": "question",
+      "answer": "testing 3",
+      "options": [
+        "testing 1",
+        "testing 2",
+        "testing 3"
+      ]
+    }
+  ],
+  "Computer_Hardware": [
+    {
+      "question": "What does computer hardware refer to?",
+      "options": [
+        "Software programs and applications",
+        "The physical components that make up a computer system",
+        "Computer networks and internet connectivity",
+        "Data and information stored on a computer"
+      ],
+      "answer": "The physical components that make up a computer system"
+    },
+    {
+      "question": "Which component is often referred to as the “brain” of the computer?",
+      "options": [
+        "GPU",
+        "CPU",
+        "RAM",
+        "Motherboard"
+      ],
+      "answer": "CPU"
+    },
+    {
+      "question": "What type of memory is used for temporary storage of data that the CPU needs to access quickly?",
+      "options": [
+        "ROM",
+        "HDD",
+        "RAM",
+        "SSD"
+      ],
+      "answer": "RAM"
+    },
+    {
+      "question": "What is the role of the GPU?",
+      "options": [
+        "Executing instructions",
+        "Providing internet",
+        "Rendering graphics",
+        "Storing data"
+      ],
+      "answer": "Rendering graphics"
+    },
+    {
+      "question": "Which of the following is an example of an input device?",
+      "options": [
+        "Monitor",
+        "Printer",
+        "Keyboard",
+        "Speakers"
+      ],
+      "answer": "Keyboard"
+    },
+    {
+      "question": "What type of memory is lost when the computer is turned off?",
+      "options": [
+        "ROM",
+        "HDD",
+        "RAM",
+        "SSD"
+      ],
+      "answer": "RAM"
+    },
+    {
+      "question": "Which storage device uses magnetic storage to store data?",
+      "options": [
+        "SSD",
+        "Optical Drive",
+        "RAM",
+        "HDD"
+      ],
+      "answer": "HDD"
+    },
+    {
+      "question": "A computer monitor is an output device.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "question": "RAM stores data permanently.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    },
+    {
+      "question": "An SSD has no moving parts.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    }
+  ],
+  "Computer_Skills": [
+    {
+      "question": "What is a commonly used word processing software?",
+      "options": [
+        "Microsoft Word",
+        "Photoshop",
+        "Chrome",
+        "Excel"
+      ],
+      "answer": "Microsoft Word"
+    },
+    {
+      "question": "Which software is used for spreadsheets?",
+      "options": [
+        "Excel",
+        "PowerPoint",
+        "Illustrator",
+        "Drive"
+      ],
+      "answer": "Excel"
+    },
+    {
+      "question": "What is the purpose of internet browsing?",
+      "options": [
+        "Gaming",
+        "Watching movies",
+        "Researching information",
+        "Texting"
+      ],
+      "answer": "Researching information"
+    },
+    {
+      "question": "Which of the following is an email client?",
+      "options": [
+        "Outlook",
+        "Photoshop",
+        "Messenger",
+        "Netflix"
+      ],
+      "answer": "Outlook"
+    },
+    {
+      "question": "What is file management?",
+      "options": [
+        "Organizing files",
+        "Designing hardware",
+        "Developing apps",
+        "Networking"
+      ],
+      "answer": "Organizing files"
+    },
+    {
+      "question": "What is digital literacy?",
+      "options": [
+        "Understanding tech",
+        "Coding",
+        "Designing",
+        "Digital art"
+      ],
+      "answer": "Understanding tech"
+    },
+    {
+      "question": "What is cloud computing?",
+      "options": [
+        "Gaming",
+        "Online storage",
+        "Digital art",
+        "Hardware repair"
+      ],
+      "answer": "Online storage"
+    },
+    {
+      "question": "Google Drive is a collaboration tool.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "question": "Firewalls help secure networks from unauthorized access.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "question": "Microsoft Word is used to browse the web.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    }
+  ],
+  "Tech_Brands_Gaming": [
+    {
+      "question": "Which company makes the PlayStation console?",
+      "options": [
+        "Microsoft",
+        "Sony",
+        "Nintendo",
+        "Sega"
+      ],
+      "answer": "Sony"
+    },
+    {
+      "question": "What is Samsung best known for?",
+      "options": [
+        "Smartphones",
+        "Search Engine",
+        "Electric Cars",
+        "VR"
+      ],
+      "answer": "Smartphones"
+    },
+    {
+      "question": "Which company makes i7 and i9 processors?",
+      "options": [
+        "Intel",
+        "AMD",
+        "NVIDIA",
+        "Apple"
+      ],
+      "answer": "Intel"
+    },
+    {
+      "question": "What is Google's parent company called?",
+      "options": [
+        "Alphabet",
+        "Meta",
+        "SearchCorp",
+        "Google Inc."
+      ],
+      "answer": "Alphabet"
+    },
+    {
+      "question": "Which VR headset is made by Meta?",
+      "options": [
+        "Oculus",
+        "Vision Pro",
+        "Vive",
+        "SteamVR"
+      ],
+      "answer": "Oculus"
+    },
+    {
+      "question": "Which company developed the character Mario?",
+      "options": [
+        "Sony",
+        "SEGA",
+        "Nintendo",
+        "Microsoft"
+      ],
+      "answer": "Nintendo"
+    },
+    {
+      "question": "What does 'FPS' stand for in gaming?",
+      "options": [
+        "Frames Per Screen",
+        "Fast Processing Speed",
+        "First-Person Shooter",
+        "File Packet Speed"
+      ],
+      "answer": "First-Person Shooter"
+    },
+    {
+      "question": "Which Xbox-exclusive franchise features Master Chief?",
+      "options": [
+        "Call of Duty",
+        "Halo",
+        "Destiny",
+        "Gears of War"
+      ],
+      "answer": "Halo"
+    },
+    {
+      "question": "The iPhone was released by Apple in 2007.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True"
+    },
+    {
+      "question": "Sony owns the Windows operating system.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "False"
+    }
+  ]
+}

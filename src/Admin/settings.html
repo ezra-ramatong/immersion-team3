@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Setting - Quantity Select</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #4f8cff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background: rgba(255, 255, 255, 0.85);
+        width: 900px;
+        height: 600px;
+        text-align: center;
+        padding: 80px 48px 56px 48px;
+        position: relative;
+        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+      }
+
+      .header {
+        color: #4f8cff;
+        font-weight: bold;
+        padding: 16px;
+        font-size: 30px;
+        margin-top: 0;
+        margin-bottom: 18px;
+        width: 90%;
+        position: static;
+      }
+
+      .questions-number {
+        margin: 56px auto 0 auto;
+      }
+
+      .questions-number p {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 24px;
+        color: #4f8cff;
+        letter-spacing: 1px;
+      }
+
+      .quantity-button {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+        align-items: center;
+      }
+
+      .circle {
+        width: 48px;
+        height: 48px;
+        border: 2px solid #4f8cff;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 20px;
+        color: #4f8cff;
+        cursor: pointer;
+        transition:
+          background 0.2s,
+          color 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 0 2px 8px rgba(79, 140, 255, 0.1);
+      }
+      .circle:hover {
+        background: #4f8cff;
+        color: white;
+        box-shadow: 0 4px 16px rgba(79, 140, 255, 0.18);
+      }
+
+      .save-button {
+        background: #4f8cff;
+        color: white;
+        padding: 14px 38px;
+        border: none;
+        border-radius: 28px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 32px;
+        font-size: 18px;
+        box-shadow: 0 4px 16px rgba(79, 140, 255, 0.18);
+        transition:
+          background 0.2s,
+          box-shadow 0.2s;
+      }
+      .save-button:hover {
+        background: linear-gradient(90deg, #3a7bd5 60%, #a6c1ee 100%);
+        box-shadow: 0 8px 32px rgba(79, 140, 255, 0.24);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header"></div>
+      <div class="questions-number">
+        <p>Questions Quantity:</p>
+        <div class="quantity-button" id="quantityButton">
+          <div class="circle" onclick="prev()">&#60;</div>
+          <div class="circle" onclick="next()">&#62;</div>
+        </div>
+      </div>
+      <button class="save-button">Save</button>
+    </div>
+
+    <script>
+      const questionsNumber = [3, 4, 5, 6, 7, 8, 9, 10];
+      let startIndex = 0;
+      const visibleCount = 3;
+
+      function renderQuestionsNumber() {
+        const quantityButton = document.getElementById("quantityButton");
+        const allCircles = quantityButton.querySelectorAll(".circle");
+        allCircles.forEach((c, i) => {
+          if (i !== 0 && i !== allCircles.length - 1) {
+            c.remove();
+          }
+        });
+
+        questionsNumber
+          .slice(startIndex, startIndex + visibleCount)
+          .forEach((quantity) => {
+            const div = document.createElement("div");
+            div.className = "circle";
+            div.textContent = quantity;
+            quantityButton.insertBefore(
+              div,
+              quantityButton.children[quantityButton.children.length - 1],
+            );
+          });
+      }
+
+      function prev() {
+        if (startIndex > 0) {
+          startIndex--;
+          renderQuestionsNumber();
+        }
+      }
+
+      function next() {
+        if (startIndex + visibleCount < questionsNumber.length) {
+          startIndex++;
+          renderQuestionsNumber();
+        }
+      }
+
+      window.onload = renderQuestionsNumber;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Manage Questions</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f4f6fa;
+        margin: 0;
+        padding: 0;
+      }
+
+      .header-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 40px;
+        background-color: #f4f6fa;
+      }
+
+      .header-wrapper h1 {
+        margin: 0;
+        font-size: 2rem;
+        color: #333;
+        flex-grow: 1;
+        text-align: center;
+      }
+
+      .back-btn {
+        padding: 8px 16px;
+        background: #4f8cff;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 0 2px 8px rgba(79, 140, 255, 0.08);
+        transition: background 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+
+      .back-btn:hover {
+        background: #1a5fd7;
+      }
+
+      .questions-table {
+        width: 95%;
+        margin: 30px auto;
+        border-collapse: separate;
+        border-spacing: 24px 18px;
+      }
+
+      .questions-table th,
+      .questions-table td {
+        background: #fff;
+        border: 2px solid #4f8cff;
+        padding: 16px;
+        border-radius: 12px;
+        text-align: left;
+        vertical-align: top;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+      }
+
+      .questions-table th {
+        font-size: 1.1rem;
+        color: #4f8cff;
+      }
+
+      .add-btn {
+        background: none;
+        border: none;
+        color: #4f8cff;
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-left: 8px;
+        transition: color 0.2s;
+      }
+
+      .add-btn:hover {
+        color: #1a5fd7;
+      }
+
+      .question-row {
+        font-size: 1rem;
+        color: #222;
+      }
+
+      .answer {
+        color: #888;
+        font-size: 0.95rem;
+        margin-top: 4px;
+      }
+
+      hr {
+        width: 500px;
+        border: none;
+        border-top: 3px solid #4f8cff;
+        margin: 0 auto 30px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <a href="dashboard.html" class="back-btn">
+        <i class="fa fa-arrow-left"></i>
+      </a>
+      <h1>Manage Questions</h1>
+    </div>
+
+    <hr />
+
+    <table class="questions-table" id="questionsTable">
+      <thead>
+        <tr id="categoryHeaders"></tr>
+      </thead>
+      <tbody id="questionsBody"></tbody>
+    </table>
+  </body>
+</html>
+
+<script>
+  let categories = [];
+  let questions = {};
+
+  fetch("/api/questions")
+    .then((res) => res.json())
+    .then((data) => {
+      questions = {};
+      categories = Object.keys(data);
+      categories.forEach((cat) => {
+        const mc = Array.isArray(data[cat]) ? data[cat] : [];
+        questions[cat] = mc.map((q) => ({
+          question: q.question,
+          options: q.options,
+          answer: q.answer,
+        }));
+      });
+      renderHeaders();
+      renderQuestions();
+    });
+
+  function renderHeaders() {
+    const headerRow = document.getElementById("categoryHeaders");
+    headerRow.innerHTML = "";
+    categories.forEach((cat) => {
+      headerRow.innerHTML += `
+        <th>
+          ${cat.replace(/_/g, " ")}
+          <button class="add-btn" onclick="addQuestion('${cat}')">
+            <i class="fa fa-plus"></i>
+          </button>
+        </th>
+      `;
+    });
+  }
+
+  function renderQuestions() {
+    const tbody = document.getElementById("questionsBody");
+    tbody.innerHTML = "";
+    const maxRows = Math.max(...categories.map((cat) => questions[cat].length));
+    for (let i = 0; i < maxRows; i++) {
+      let row = "<tr>";
+      categories.forEach((cat) => {
+        const q = questions[cat][i];
+        if (q) {
+          row += `<td class="question-row">
+            <div>${q.question ? q.question : ""}</div>
+            ${
+              q.options && Array.isArray(q.options) && q.options.length > 0
+                ? `
+              <ul style="margin:8px 0 0 0; padding-left:18px; color:#444; font-size:0.97rem;">
+                ${q.options.map((opt) => `<li>${opt}</li>`).join("")}
+              </ul>
+            `
+                : ""
+            }
+            <div class="answer"><strong>Answer:</strong> ${q.answer ? q.answer : ""}</div>
+          </td>`;
+        } else {
+          row += `<td></td>`;
+        }
+      });
+      row += "</tr>";
+      tbody.innerHTML += row;
+    }
+  }
+
+  function addQuestion(category) {
+    const question = prompt(
+      `Enter new question for ${category.replace(/_/g, " ")}:`,
+    );
+    if (!question) return;
+    const optionsStr = prompt(
+      "Enter options separated by commas (leave blank if not applicable):",
+    );
+    let options = [];
+    if (optionsStr && optionsStr.trim() !== "") {
+      options = optionsStr
+        .split(",")
+        .map((opt) => opt.trim())
+        .filter((opt) => opt.length > 0);
+    }
+    const answer = prompt(`Enter answer for "${question}":`);
+    if (!answer) return;
+    const newQ = { question, answer };
+    if (options.length > 0) newQ.options = options;
+    questions[category].push(newQ);
+    renderQuestions();
+
+    fetch("/api/questions", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(questions),
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to save questions");
+        return res.json();
+      })
+      .then((data) => {
+        alert("Questions updated successfully!");
+      })
+      .catch((err) => {
+        alert("Error saving questions: " + err.message);
+      });
+  }
+</script>
