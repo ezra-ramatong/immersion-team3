@@ -11,6 +11,8 @@ export function createOptionUI(option) {
     `option--${option.letter.toLowerCase()}`,
   ]);
 
+  optionDiv.dataset.optionLetter = option.letter;
+
   const letterSpan = createElement("span", ["option__letter"]);
   letterSpan.textContent = `${option.letter}.`;
 
