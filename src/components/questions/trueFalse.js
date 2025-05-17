@@ -9,7 +9,7 @@ import { markAnswers } from "../../utils/markAnswers.js";
  * @param {Function} onNext - Callback to call when question is complete.
  * @returns {HTMLElement} - The rendered DOM element for the question.
  */
-export function createTrueFalseQuestion(data, onNext) {
+export function createTrueFalseQuestion(data, onNext, onTick) {
   const container = createElement("div", ["true-false__container"]);
   let answered = false;
 
@@ -41,16 +41,20 @@ export function createTrueFalseQuestion(data, onNext) {
     optionsContainer.appendChild(optionDiv);
   });
 
-  const timer = startQuestionTimer(timePerQuestion, () => {
-    if (!answered) {
-      answered = true;
-      console.log("Time's up!");
+  const timer = startQuestionTimer(
+    timePerQuestion,
+    () => {
+      if (!answered) {
+        answered = true;
+        console.log("Time's up!");
 
-      markAnswers(null, data.correct_answer, optionsContainer, "value");
+        markAnswers(null, data.correct_answer, optionsContainer, "value");
 
-      setTimeout(onNext, 1500);
-    }
-  });
+        setTimeout(onNext, 1500);
+      }
+    },
+    onTick,
+  );
 
   appendChildren(container, [optionsContainer]);
   return container;

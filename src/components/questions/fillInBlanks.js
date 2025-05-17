@@ -9,7 +9,7 @@ import { handleAnswer } from "../handlers/handleAnswer.js";
  * @param {Function} onNext - Callback when question is complete (timeout or submission).
  * @returns {HTMLElement} - The rendered DOM element for the question.
  */
-export function createFillInBlanksQuestion(data, onNext) {
+export function createFillInBlanksQuestion(data, onNext, onTick) {
   const container = createElement("div", ["fill-in-blanks__container"]);
   let answered = false;
 
@@ -43,16 +43,20 @@ export function createFillInBlanksQuestion(data, onNext) {
   // Button submit
   submitBtn.addEventListener("click", submit);
 
-  const timer = startQuestionTimer(timePerQuestion, () => {
-    if (!answered) {
-      answered = true;
-      console.log("Time's up!");
-      handleAnswer(input, null, onNext, {
-        correctAnswer: data.correct_answer,
-        questionId: data.id,
-      });
-    }
-  });
+  const timer = startQuestionTimer(
+    timePerQuestion,
+    () => {
+      if (!answered) {
+        answered = true;
+        console.log("Time's up!");
+        handleAnswer(input, null, onNext, {
+          correctAnswer: data.correct_answer,
+          questionId: data.id,
+        });
+      }
+    },
+    onTick,
+  );
 
   appendChildren(container, [input, submitBtn]);
   return container;

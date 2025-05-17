@@ -40,6 +40,7 @@ export const defaultQuestions = [
       { letter: "C", text: "<section>", is_correct: true },
       { letter: "D", text: "<header>", is_correct: true },
     ],
+    correct_answer: ["A", "C", "D"],
   },
   {
     id: 6,
