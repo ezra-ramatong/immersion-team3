@@ -5,6 +5,7 @@ import { createFillInBlanksQuestion } from "../questions/fillInBlanks.js";
 import { createMultiSelectQuestion } from "../questions/multiSelect.js";
 import { createTrueFalseQuestion } from "../questions/trueFalse.js";
 import { createTimerUI } from "./createTimerUI.js";
+import { createProgressBar } from "./createProgressBar.js";
 
 export function createQuestionUI(questionData, onNext) {
   const container = createElement("div", ["question"]);
@@ -15,10 +16,17 @@ export function createQuestionUI(questionData, onNext) {
   // ⏱ Setup timer bar
   const header = document.querySelector(".screen__header");
   header.innerHTML = "";
+
+  const { element: progressElement, update: updateProgress } =
+    createProgressBar(settings.numQuestions);
   const { element: timerElement, update: updateTimerBar } =
     createTimerUI(timePerQuestion);
-  header.appendChild(timerElement);
+  // header.appendChild(timerElement);
+  appendChildren(header, [progressElement, timerElement]);
 
+  // setup progress bar
+
+  updateProgress(currentQuestionIndex);
   const onTick = (remaining) => updateTimerBar(remaining);
 
   const questionNumber = createElement("h3", ["question__number"]);
