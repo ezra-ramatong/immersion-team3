@@ -8,7 +8,7 @@ app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const QUESTIONS_PATH = path.join(__dirname, 'src', 'Data', 'questions.json');
+const QUESTIONS_PATH = path.join(__dirname, 'src', 'data', 'questions.json');
 
 app.get('/api/questions', (req, res) => {
   fs.readFile(QUESTIONS_PATH, 'utf8', (err, data) => {
@@ -31,7 +31,7 @@ app.put('/api/questions', (req, res) => {
   });
 });
 
-app.use(express.static(path.join(__dirname, 'src', 'Admin')));
+app.use(express.static(path.join(__dirname, 'src', 'admin')));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
