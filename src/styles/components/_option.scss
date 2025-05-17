@@ -1,0 +1,22 @@
+.option {
+  border-bottom: 0.2rem solid black;
+  padding: 2.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: background 1s cubic-bezier(0.19, 1, 0.22, 1);
+
+  p {
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  &__letter {
+    font-size: 2rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: #7ABAE8;
+  }
+}
