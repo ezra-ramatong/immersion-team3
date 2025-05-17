@@ -4,7 +4,10 @@ class User {
   #userName;
   #score = 0;
   #numQuestions = 0;
-  #timePerQuestion = 0;
+
+  /*set to default 30seconds admin can configure the time  and create a method to expose it 
+  to the front-end*/
+  #timePerQuestion = 30;
   #category;
   #questions = [];
   #currentQuestionIndex = 0;
@@ -69,31 +72,33 @@ class User {
     this.#userName = username;
   }
 
-  set category(category){
+  set category(category) {
     this.#category = category;
   }
 
-  set score(score){
+  set score(score) {
     this.#score = score;
   }
 
-  set numQuestions(numQuestions){
+  set numQuestions(numQuestions) {
     this.#numQuestions = numQuestions;
   }
 
-  set timePerQuestion(timePerQuestion){
+  set timePerQuestion(timePerQuestion) {
     this.#timePerQuestion = timePerQuestion;
   }
 
-  set questions(questions){
+  set questions(questions) {
     this.#questions = questions;
   }
 
-  set currentQuestionIndex(index){
+  set currentQuestionIndex(index) {
     this.#currentQuestionIndex = index;
   }
 
-  set highScores(highScores){
+  set highScores(highScores) {
     this.#highScores = highScores;
   }
 }
+
+model.exports = { User };
