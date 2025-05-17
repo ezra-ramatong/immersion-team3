@@ -37,7 +37,7 @@ export function createQuestionUI(questionData, onNext) {
       break;
     case "multi_select":
       addClasses(container, ["multi-select"]);
-      container.appendChild(createMultiSelectQuestion(questionData));
+      container.appendChild(createMultiSelectQuestion(questionData, onNext));
       break;
     case "true_false":
       addClasses(container, ["true-false"]);
