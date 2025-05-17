@@ -3,3 +3,17 @@ body {
   background: var(--color-background);
   font-family: var(--font-family-base);
 }
+
+.feedback {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+
+  &--correct {
+    color: green;
+  }
+
+  &--incorrect {
+    color: red;
+  }
+}

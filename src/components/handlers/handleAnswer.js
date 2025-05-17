@@ -51,20 +51,23 @@ export function handleInputAnswer(inputEl, onComplete, answerContext) {
   const userAnswer = inputEl.value.trim().toLowerCase();
   const correctAnswer = (answerContext.correctAnswer || "").toLowerCase();
 
-  if (userAnswer === "") {
-    // Optionally provide feedback on empty input or ignore
-    return;
-  }
-
   inputEl.disabled = true;
 
-  // Check if the user's input matches the correct answer (case-insensitive)
+  const feedbackMsg = document.createElement("div");
+  feedbackMsg.classList.add("feedback");
+
   if (userAnswer === correctAnswer) {
     incrementScore();
     addClasses(inputEl, ["correct"]);
+    feedbackMsg.textContent = "Correct!";
+    feedbackMsg.classList.add("feedback--correct");
   } else {
     addClasses(inputEl, ["incorrect"]);
+    feedbackMsg.textContent = `Correct answer: ${answerContext.correctAnswer}`;
+    feedbackMsg.classList.add("feedback--incorrect");
   }
+
+  inputEl.insertAdjacentElement("afterend", feedbackMsg);
 
   setTimeout(onComplete, 1500);
 }
