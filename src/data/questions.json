@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "question_type": "multiple_choice",
     "question_text": "Which of the following command is used to change data in table?",
     "category": "Database_Management_System",
@@ -13,7 +12,6 @@
     "correct_answer": "B"
   },
   {
-    "id": 2,
     "question_type": "multiple_choice",
     "question_text": "What is rows of a relation known as?",
     "category": "Database_Management_System",
@@ -26,7 +24,6 @@
     "correct_answer": "C"
   },
   {
-    "id": 3,
     "question_type": "multiple_choice",
     "question_text": "What is the name of the query that is placed within a WHERE or HAVING clause of another query?",
     "category": "Database_Management_System",
@@ -39,7 +36,6 @@
     "correct_answer": "B"
   },
   {
-    "id": 4,
     "question_type": "multiple_choice",
     "question_text": "What is the use of COUNT in SQL?",
     "category": "Database_Management_System",
@@ -52,7 +48,6 @@
     "correct_answer": "B"
   },
   {
-    "id": 5,
     "question_type": "multiple_choice",
     "question_text": "Which command is used to remove a stored function from the database?",
     "category": "Database_Management_System",
@@ -65,7 +60,6 @@
     "correct_answer": "A"
   },
   {
-    "id": 6,
     "question_type": "multiple_choice",
     "question_text": "Which data structure is used in Hierarchical model records?",
     "category": "Database_Management_System",
@@ -78,7 +72,6 @@
     "correct_answer": "B"
   },
   {
-    "id": 7,
     "question_type": "multiple_choice",
     "question_text": "Which is AS clause used for?",
     "category": "Database_Management_System",
@@ -91,7 +84,6 @@
     "correct_answer": "A"
   },
   {
-    "id": 8,
     "question_type": "multiple_choice",
     "question_text": "Which is the lowest level of abstraction that describes how the data are actually stored?",
     "category": "Database_Management_System",
@@ -104,7 +96,6 @@
     "correct_answer": "A"
   },
   {
-    "id": 9,
     "question_type": "multiple_choice",
     "question_text": "What is DBMS?",
     "category": "Database_Management_System",
@@ -117,21 +108,18 @@
     "correct_answer": "B"
   },
   {
-    "id": 10,
     "question_type": "true_false",
     "question_text": "SQL stands for Structured Query Language.",
     "category": "Database_Management_System",
     "correct_answer": true
   },
   {
-    "id": 11,
     "question_type": "fill_in_blanks",
     "question_text": "In CSS, the property used to make text bold is ___.",
     "category": "CSS",
     "correct_answer": "font-weight"
   },
   {
-    "id": 12,
     "question_type": "multiple_choice",
     "question_text": "Which CSS property is used to change the text color of an element?",
     "category": "CSS",
@@ -144,21 +132,18 @@
     "correct_answer": "B"
   },
   {
-    "id": 13,
     "question_type": "true_false",
     "question_text": "The 'margin' property in CSS is used to add space inside an element.",
     "category": "CSS",
     "correct_answer": false
   },
   {
-    "id": 14,
     "question_type": "fill_in_blanks",
     "question_text": "The CSS property to set the background color is ___.",
     "category": "CSS",
     "correct_answer": "background-color"
   },
   {
-    "id": 15,
     "question_type": "multiple_choice",
     "question_text": "Which value of the 'position' property will position an element relative to its first positioned ancestor?",
     "category": "CSS",
@@ -171,7 +156,6 @@
     "correct_answer": "C"
   },
   {
-    "id": 16,
     "question_type": "multi_select",
     "question_text": "Which of the following are valid CSS units?",
     "category": "CSS",
@@ -184,21 +168,18 @@
     "correct_answers": ["A", "B", "C", "D"]
   },
   {
-    "id": 17,
     "question_type": "true_false",
     "question_text": "The 'display: none' property hides an element from the page.",
     "category": "CSS",
     "correct_answer": true
   },
   {
-    "id": 18,
     "question_type": "fill_in_blanks",
     "question_text": "The CSS property to make text italic is ___.",
     "category": "CSS",
     "correct_answer": "font-style"
   },
   {
-    "id": 19,
     "question_type": "multiple_choice",
     "question_text": "Which selector selects all elements with class 'box'?",
     "category": "CSS",
@@ -211,7 +192,6 @@
     "correct_answer": "B"
   },
   {
-    "id": 20,
     "question_type": "multi_select",
     "question_text": "Which of the following are CSS pseudo-classes?",
     "category": "CSS",
@@ -224,7 +204,6 @@
     "correct_answers": ["A", "B", "C", "D"]
   },
   {
-    "id": 21,
     "question_type": "multiple_choice",
     "question_text": "What component is considered the brain of the computer?",
     "category": "Computer_Hardware",
@@ -237,7 +216,6 @@
     "correct_answer": "B"
   },
   {
-    "id": 22,
     "question_type": "multiple_choice",
     "question_text": "What type of memory is volatile and loses data when power is off?",
     "category": "Computer_Hardware",
@@ -250,7 +228,6 @@
     "correct_answer": "C"
   },
   {
-    "id": 23,
     "question_type": "multiple_choice",
     "question_text": "Which device is used to input data into a computer?",
     "category": "Computer_Hardware",
@@ -263,7 +240,6 @@
     "correct_answer": "B"
   },
   {
-    "id": 24,
     "question_type": "multiple_choice",
     "question_text": "What does SSD stand for?",
     "category": "Computer_Hardware",
@@ -276,7 +252,6 @@
     "correct_answer": "A"
   },
   {
-    "id": 25,
     "question_type": "multiple_choice",
     "question_text": "Which component connects the CPU to other hardware devices?",
     "category": "Computer_Hardware",
@@ -289,7 +264,6 @@
     "correct_answer": "A"
   },
   {
-    "id": 26,
     "question_type": "multiple_choice",
     "question_text": "Which port is typically used to connect a monitor to a computer?",
     "category": "Computer_Hardware",
@@ -302,7 +276,6 @@
     "correct_answer": "B"
   },
   {
-    "id": 27,
     "question_type": "multiple_choice",
     "question_text": "What is the purpose of a power supply unit (PSU)?",
     "category": "Computer_Hardware",
@@ -315,7 +288,6 @@
     "correct_answer": "B"
   },
   {
-    "id": 28,
     "question_type": "multiple_choice",
     "question_text": "Which component is responsible for rendering graphics?",
     "category": "Computer_Hardware",
@@ -328,14 +300,12 @@
     "correct_answer": "B"
   },
   {
-    "id": 29,
     "question_type": "true_false",
     "question_text": "ROM is non-volatile memory that retains data when the computer is turned off.",
     "category": "Computer_Hardware",
     "correct_answer": true
   },
   {
-    "id": 30,
     "question_type": "multiple_choice",
     "question_text": "Which hardware component temporarily stores data for quick access?",
     "category": "Computer_Hardware",
@@ -349,7 +319,6 @@
   },
 
   {
-    "id": 31,
     "question_type": "multiple_choice",
     "question_text": "What does IT stand for?",
     "category": "General_IT",
@@ -362,7 +331,6 @@
     "correct_answer": "B"
   },
   {
-    "id": 32,
     "question_type": "multiple_choice",
     "question_text": "Which device connects a computer to a network?",
     "category": "General_IT",
@@ -375,7 +343,6 @@
     "correct_answer": "A"
   },
   {
-    "id": 33,
     "question_type": "multiple_choice",
     "question_text": "What is the main purpose of an operating system?",
     "category": "General_IT",
@@ -388,14 +355,12 @@
     "correct_answer": "A"
   },
   {
-    "id": 34,
     "question_type": "true_false",
     "question_text": "The cloud refers to storing and accessing data over the internet.",
     "category": "General_IT",
     "correct_answer": true
   },
   {
-    "id": 35,
     "question_type": "multiple_choice",
     "question_text": "Which of the following is NOT an example of software?",
     "category": "General_IT",
@@ -408,7 +373,6 @@
     "correct_answer": "C"
   },
   {
-    "id": 36,
     "question_type": "multiple_choice",
     "question_text": "Which protocol is commonly used to browse the web?",
     "category": "General_IT",
@@ -421,7 +385,6 @@
     "correct_answer": "A"
   },
   {
-    "id": 37,
     "question_type": "multiple_choice",
     "question_text": "What is a firewall used for?",
     "category": "General_IT",
@@ -434,14 +397,12 @@
     "correct_answer": "B"
   },
   {
-    "id": 38,
     "question_type": "fill_in_blanks",
     "question_text": "A __________ is a malicious software designed to damage or gain unauthorized access to a computer system.",
     "category": "General_IT",
     "correct_answer": "virus"
   },
   {
-    "id": 39,
     "question_type": "multiple_choice",
     "question_text": "Which device is used to print documents?",
     "category": "General_IT",
@@ -454,7 +415,6 @@
     "correct_answer": "B"
   },
   {
-    "id": 40,
     "question_type": "true_false",
     "question_text": "Backing up data regularly helps prevent data loss.",
     "category": "General_IT",

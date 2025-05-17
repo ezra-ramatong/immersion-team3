@@ -166,7 +166,7 @@
         const q = grouped[cat][i];
         if (q) {
           row += `<td class="question-row">
-            <div><b>Q${q.id}:</b> ${q.question_text ? q.question_text : q.question}</div>
+            <div>${q.question_text ? q.question_text : q.question}</div>
             ${renderOptions(q)}
             <div class="answer"><strong>Answer:</strong> ${renderAnswer(q)}</div>
             <div style="font-size:0.9em;color:#888;margin-top:2px;">Type: ${q.question_type.replace(/_/g, " ")}</div>
@@ -210,7 +210,7 @@
     if (!type) return;
     let question_text = prompt(`Enter question text for ${category.replace(/_/g, ' ')}:`);
     if (!question_text) return;
-    let newQ = { id: questions.length ? Math.max(...questions.map(q => q.id)) + 1 : 1, question_type: type, category, question_text };
+    let newQ = { question_type: type, category, question_text };
 
     if (type === 'multiple_choice' || type === 'multi_select') {
       let options = [];
