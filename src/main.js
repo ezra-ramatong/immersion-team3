@@ -1,4 +1,5 @@
-import "./styles/style.css";
+import "./styles/main.scss";
+
 import { User } from "./models/user_model.js";
 import { LocalStorageService } from "./services/local_store_service.js";
 import { UserService } from "./services/user_service.js";

@@ -1,0 +1,9 @@
+.multiple-choice {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  .option:last-child {
+    border-bottom: none;
+  }
+}

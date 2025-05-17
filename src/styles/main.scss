@@ -1,0 +1,17 @@
+/* @use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+@use "abstracts/functions" as *; */
+
+@use "base/reset";
+@use "base/colors";
+@use "base/typography";
+@use "base/global";
+@use "base/utilities";
+
+@use "layouts/header";
+@use "layouts/screen";
+
+@use "components/option";
+@use "components/multiple-choice";
+@use "components/progress-bar";
+@use "components/timer";
