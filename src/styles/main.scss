@@ -2,11 +2,11 @@
 @use "abstracts/mixins" as *;
 @use "abstracts/functions" as *; */
 
-@use "base/colors";
 @use "base/reset";
+@use "base/colors";
+@use "base/typography";
 @use "base/global";
 @use "base/utilities";
-/* @use "base/typography";  */
 
 @use "layouts/header";
 @use "layouts/screen";
