@@ -1,0 +1,86 @@
+html {
+  font-size: 60%;
+  overflow-x: hidden;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 4rem 35%;
+  background: rgba(15, 150, 239, 0.3);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
+
+section {
+  min-height: 100vh;
+  padding: 3rem 10%;
+}
+
+.welcome-intro {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.welcome-intro-inactive {
+  display: none;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.left-panel p {
+  font-size: 1.5rem;
+}
+
+.start-quiz {
+  background-color: rgba(15, 150, 239, 0.3);
+  width: 20vw;
+  margin-top: 2rem;
+}
+
+.user-information {
+  display: none;
+}
+
+.user-information-active {
+  display: block;
+}
+
+.user-information h3 {
+  text-align: center;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+#user-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+input,
+select {
+  width: 25vw;
+}
+
+.submit-user-info {
+  justify-content: center;
+  align-content: center;
+  background-color: rgba(15, 150, 239, 0.3);
+}

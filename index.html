@@ -1,16 +1,13 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@100..900&display=swap"
-    rel="stylesheet">
-  <title>Vite App</title>
+<meta charset="UTF-8" />
+<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@100..900&display=swap"
+  rel="stylesheet">
+<title>Vite App</title>
 </head>
 
 <body>
@@ -18,6 +15,65 @@
   <!--Start screen-->
   <div id="start-screen" class="screen hidden">
     <!-- Start screen content: user enters name, selects categories -->
+    <header class="header"></header>
+    <section class="welcome-intro">
+      <div class="left-panel">
+        <h1>TECH QUIZ: TEST YOUR KNOWLEDGE AND SKILLS</h1>`
+        <h2>WELCOME TO OUR INTERACTIVE QUIZ</h2>
+
+        <p>
+          Are you ready to put your tech knowlegde to the test?
+          We have fun tech questions from various tech categories that you can tackle.
+          </br></br>
+          Take our quiz and see where you stand in our leaderboard of previous techies who took the test.
+          With our randomised questions you can take as many tests as you please.
+          </br></br>
+          The tech landscape is a forever changing field, changes rapidly on a daily basis, stay up to
+          date with the technology that impacts our daily lives.
+          </br></br>
+          Test how much you know and remember to have fun!
+        </p>
+
+        <input type="button" class="start-quiz" value="TAKE QUIZ">
+      </div>
+
+      <div class="right-panel">
+        <img src="./src/assets/landing-page-side-panel.JPG" alt="right-panel-image">
+      </div>
+    </section>
+
+    <section class="user-information" id="user-info">
+      <H3>ENTER YOUR DETAILS</H3>
+      <form id="user-details">
+        <div>
+          <label for="first-name">First Name</label>
+          <input type="text" name="first-name" id="first-name" required>
+        </div>
+
+        <div>
+          <label for="last-name">Last Name</label>
+          <input type="text" name="last-name" id="last-name" required>
+        </div>
+
+        <div>
+          <label for="username">Username</label>
+          <input type="text" name="userName" id="userName" required>
+        </div>
+
+        <div>
+          <label for="tech-category">Category</label>
+          <select id="tech-category" name="tech-category" required>
+            <option value="General IT" selected>General IT</option>
+            <option value="Relational Database">Relational Database</option>
+            <option value="HTML/CSS">HTML/CSS</option>
+            <option value="JavaScript">JavaScript</option>
+          </select>
+        </div>
+
+        <input type="button" class="submit-user-info" value="submit">
+      </form>
+
+    </section>
   </div>
 
 
