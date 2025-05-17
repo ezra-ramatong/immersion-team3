@@ -1,44 +1,23 @@
-import { getQuestions } from "../data/questions.js";
 import { showPage } from "../router.js";
-import {
-  setUser,
-  setSettings,
-  setQuestions,
-  getCurrentQuestion,
-  getState,
-  nextQuestion,
-} from "../state.js";
-
 import { clearElement, selectElement } from "../utils/dom.js";
-
-import { shuffleArray } from "../utils/shuffle.js";
 import { createQuestionUI } from "../components/ui/createQuestionUI.js";
 
-export function startQuiz(username, categories) {
-  setUser(username);
-  setSettings({ categories });
+let currentUser = null; // Module-local user session state
 
-  const allQuestions = getQuestions();
-  const filtered = allQuestions.filter((q) => categories.includes(q.category));
-
-  const shuffled = shuffleArray(filtered);
-  const { numQuestions } = getState().settings;
-
-  setQuestions(shuffled.slice(0, numQuestions));
-
+export function startQuiz(user) {
+  currentUser = user;
   showPage("quiz-screen");
-  renderQuizPage(getCurrentQuestion());
+  renderQuizPage(currentUser.currentQuestion);
 }
 
 export function loadNextQuestion() {
-  nextQuestion();
-  const { currentQuestionIndex, questions } = getState();
+  currentUser.currentQuestionIndex++;
 
-  if (currentQuestionIndex < questions.length) {
-    renderQuizPage(getCurrentQuestion());
+  if (currentUser.currentQuestionIndex < currentUser.questions.length) {
+    renderQuizPage(currentUser.questions[currentUser.currentQuestionIndex]);
   } else {
     console.log("Quiz complete!");
-    // showResultsPage() or similar
+    // TODO: showResultsPage(currentUser) or similar
   }
 }
 
@@ -48,6 +27,12 @@ export function renderQuizPage(
 ) {
   const root = selectElement(containerSelector);
   clearElement(root);
-  const questionUI = createQuestionUI(questionData, loadNextQuestion);
+
+  const questionUI = createQuestionUI(
+    questionData,
+    currentUser,
+    loadNextQuestion,
+  );
+
   root.appendChild(questionUI);
 }

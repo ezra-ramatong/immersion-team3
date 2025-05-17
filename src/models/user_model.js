@@ -1,6 +1,4 @@
 export class User {
-  #firstName;
-  #lastName;
   #userName;
   #score = 0;
   #numQuestions = 0;
@@ -13,19 +11,9 @@ export class User {
   #currentQuestionIndex = 0;
   #highScores = [];
 
-  constructor(firstName, lastName, userName, category) {
-    this.#firstName = firstName;
-    this.#lastName = lastName;
+  constructor(userName, category) {
     this.#userName = userName;
     this.#category = category;
-  }
-
-  get firstName() {
-    return this.#firstName;
-  }
-
-  get lastName() {
-    return this.#lastName;
   }
 
   get userName() {
@@ -60,12 +48,8 @@ export class User {
     return this.#highScores;
   }
 
-  set firstName(name) {
-    this.#firstName = name;
-  }
-
-  set lastName(name) {
-    this.#lastName = name;
+  get currentQuestion() {
+    return this.#questions[this.#currentQuestionIndex];
   }
 
   set userName(username) {

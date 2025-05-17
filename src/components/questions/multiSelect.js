@@ -1,4 +1,3 @@
-import { getState } from "../../state.js";
 import {
   createElement,
   appendChildren,
@@ -14,11 +13,15 @@ import { startQuestionTimer } from "../../utils/timer.js";
  * @param {number} onTick.remainingSeconds - The number of seconds left in the countdown.
  * @returns {HTMLElement} - The rendered DOM element for the question.
  */
-export function createMultiSelectQuestion(data, onNext, onTick) {
+export function createMultiSelectQuestion(
+  data,
+  onNext,
+  onTick,
+  timePerQuestion,
+) {
   const container = createElement("div", ["multi-select__container"]);
   let answered = false;
 
-  const { timePerQuestion } = getState().settings;
   const optionsContainer = createElement("div", ["options__container"]);
 
   data.options.forEach((option) => {

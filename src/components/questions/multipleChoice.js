@@ -1,14 +1,16 @@
-import { getState } from "../../state.js";
 import { createElement } from "../../utils/dom.js";
 import { startQuestionTimer } from "../../utils/timer.js";
 import { markAnswers } from "../../utils/markAnswers.js";
 import { createOptionUI } from "../ui/createOptionUI.js";
 
-export function createMultipleChoiceQuestion(data, onNext, onTick) {
+export function createMultipleChoiceQuestion(
+  data,
+  onNext,
+  onTick,
+  timePerQuestion,
+) {
   const optionsContainer = createElement("div", ["options__container"]);
   let answered = false;
-
-  const { timePerQuestion } = getState().settings;
 
   const timer = startQuestionTimer(
     timePerQuestion,

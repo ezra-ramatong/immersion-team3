@@ -1,4 +1,3 @@
-import { getState } from "../../state.js";
 import { createElement, appendChildren } from "../../utils/dom.js";
 import { startQuestionTimer } from "../../utils/timer.js";
 import { markAnswers } from "../../utils/markAnswers.js";
@@ -9,11 +8,9 @@ import { markAnswers } from "../../utils/markAnswers.js";
  * @param {Function} onNext - Callback to call when question is complete.
  * @returns {HTMLElement} - The rendered DOM element for the question.
  */
-export function createTrueFalseQuestion(data, onNext, onTick) {
+export function createTrueFalseQuestion(data, onNext, onTick, timePerQuestion) {
   const container = createElement("div", ["true-false__container"]);
   let answered = false;
-
-  const { timePerQuestion } = getState().settings;
 
   const options = [
     { text: "True", value: true },
