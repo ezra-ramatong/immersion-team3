@@ -130,11 +130,31 @@
       .plus-btn:hover {
         background: #3a7bd5;
       }
+
+      input[type="number"]#customQuestionInput,
+      input[type="number"]#customTimeInput {
+        padding: 10px 12px;
+        border: 2px solid #4f8cff;
+        border-radius: 18px;
+        font-size: 18px;
+        color: #4f8cff;
+        background: #fff;
+        outline: none;
+        margin-left: 8px;
+        width: 90px;
+        box-shadow: 0 2px 8px rgba(79, 140, 255, 0.10);
+        transition: border 0.2s, box-shadow 0.2s;
+      }
+      input[type="number"]#customQuestionInput:focus,
+      input[type="number"]#customTimeInput:focus {
+        border: 2px solid #3a7bd5;
+        box-shadow: 0 4px 16px rgba(79, 140, 255, 0.18);
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="header"></div>
+      <div class="header">Quiz Settings</div>
       <!-- Add the plus buttons and input fields in your HTML -->
       <div class="questions-number">
         <p>Questions Quantity:</p>
@@ -142,13 +162,14 @@
           style="display: flex; align-items: center; justify-content: center"
         >
           <div class="quantity-button" id="quantityButton">
-            <div class="circle">&#60;</div>
-            <div class="circle">&#62;</div>
+            <div class="circle" aria-label="Previous quantity">&#60;</div>
+            <div class="circle" aria-label="Next quantity">&#62;</div>
           </div>
           <button
             id="addQuestionBtn"
             class="plus-btn"
             title="Add custom quantity"
+            aria-label="Add custom quantity"
           >
             +
           </button>
@@ -158,8 +179,11 @@
             min="1"
             max="100"
             style="width: 60px; margin-left: 8px; display: none"
+            aria-label="Custom question quantity"
+            placeholder="Custom"
           />
         </div>
+        <div id="questionHelper" style="font-size: 13px; color: #888; margin-top: 4px; display: none;">Enter a custom number (1-100) and press <b>Enter</b></div>
       </div>
       <div class="timer">
         <p>Time limit:</p>
@@ -167,10 +191,10 @@
           style="display: flex; align-items: center; justify-content: center"
         >
           <div class="time-limit" id="timeLimit">
-            <div class="circle">&#60;</div>
-            <div class="circle">&#62;</div>
+            <div class="circle" aria-label="Previous time">&#60;</div>
+            <div class="circle" aria-label="Next time">&#62;</div>
           </div>
-          <button id="addTimeBtn" class="plus-btn" title="Add custom time">
+          <button id="addTimeBtn" class="plus-btn" title="Add custom time" aria-label="Add custom time">
             +
           </button>
           <input
@@ -179,10 +203,15 @@
             min="1"
             max="600"
             style="width: 60px; margin-left: 8px; display: none"
+            aria-label="Custom time limit"
+            placeholder="Custom (s)"
           />
         </div>
+        <div id="timeHelper" style="font-size: 13px; color: #888; margin-top: 4px; display: none;">Enter a custom time in seconds (1-600) and press <b>Enter</b></div>
       </div>
-      <button class="save-button">Save</button>
+      <div id="selectedValues" style="margin-top: 18px; font-size: 16px; color: #4f8cff; font-weight: 500;"></div>
+      <button class="save-button" aria-label="Save settings">Save</button>
+      <div id="saveMsg" style="margin-top: 16px; font-size: 15px; display: none;"></div>
     </div>
 
     <script>
@@ -212,6 +241,7 @@
             div.onclick = () => {
               selectedQuestions = quantity;
               renderQuestionsNumber();
+              updateSelectedValues();
             };
             quantityButton.insertBefore(
               div,
@@ -238,6 +268,7 @@
             div.onclick = () => {
               selectedTime = limit;
               renderTimeLimit();
+              updateSelectedValues();
             };
             timeLimitDiv.insertBefore(
               div,
@@ -271,7 +302,23 @@
         }
       }
 
+      function updateSelectedValues() {
+        document.getElementById("selectedValues").textContent = `Selected: ${selectedQuestions} questions, ${selectedTime}s time limit`;
+      }
+
+      function showSaveMsg(msg, success = true) {
+        const el = document.getElementById("saveMsg");
+        el.textContent = msg;
+        el.style.display = "block";
+        el.style.color = success ? "#4f8cff" : "#d32f2f";
+        setTimeout(() => {
+          el.style.display = "none";
+        }, 2000);
+      }
+
       document.querySelector(".save-button").onclick = function () {
+        const btn = this;
+        btn.disabled = true;
         fetch("/api/quiz-settings", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -281,8 +328,9 @@
           }),
         })
           .then((res) => res.json())
-          .then((data) => alert("Settings saved!"))
-          .catch(() => alert("Failed to save settings"));
+          .then((data) => showSaveMsg("Settings saved!"))
+          .catch(() => showSaveMsg("Failed to save settings", false))
+          .finally(() => (btn.disabled = false));
       };
 
       document.getElementById("quantityButton").children[0].onclick = () =>
@@ -304,10 +352,11 @@
         input.style.display = "inline-block";
         input.value = "";
         input.focus();
+        document.getElementById("questionHelper").style.display = "block";
       };
-
       document.getElementById("customQuestionInput").onblur = function () {
         this.style.display = "none";
+        document.getElementById("questionHelper").style.display = "none";
       };
 
       document.getElementById("customQuestionInput").onkeydown = function (e) {
@@ -318,8 +367,10 @@
             questionsNumber.sort((a, b) => a - b);
             selectedQuestions = val;
             renderQuestionsNumber();
+            updateSelectedValues();
           }
           this.style.display = "none";
+          document.getElementById("questionHelper").style.display = "none";
         }
       };
 
@@ -328,10 +379,11 @@
         input.style.display = "inline-block";
         input.value = "";
         input.focus();
+        document.getElementById("timeHelper").style.display = "block";
       };
-
       document.getElementById("customTimeInput").onblur = function () {
         this.style.display = "none";
+        document.getElementById("timeHelper").style.display = "none";
       };
 
       document.getElementById("customTimeInput").onkeydown = function (e) {
@@ -342,8 +394,10 @@
             timeLimits.sort((a, b) => a - b);
             selectedTime = val;
             renderTimeLimit();
+            updateSelectedValues();
           }
           this.style.display = "none";
+          document.getElementById("timeHelper").style.display = "none";
         }
       };
 
@@ -355,10 +409,12 @@
             if (data.timeLimit) selectedTime = data.timeLimit;
             renderQuestionsNumber();
             renderTimeLimit();
+            updateSelectedValues();
           })
           .catch(() => {
             renderQuestionsNumber();
             renderTimeLimit();
+            updateSelectedValues();
           });
       };
     </script>
