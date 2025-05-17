@@ -3,20 +3,47 @@
   padding: 2.6rem 1rem;
   display: flex;
   flex-direction: column;
-  transition: background 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: background 0.3s ease, transform 0.2s ease;
 
   p {
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-regular);
     text-align: center;
   }
 
   &__letter {
-    font-size: 2rem;
+    font-size: var(--font-size-lg);
   }
 
   &:hover {
     cursor: pointer;
-    background: #7ABAE8;
+    background: var(--color-primary);
+  }
+
+  &.selected {
+    background-color: var(--color-primary);
+    color: white;
+    transform: scale(1.02);
+    border-color: var(--color-primary-dark);
+
+    p,
+    .option__letter {
+      font-weight: var(--font-weight-bold);
+    }
+  }
+
+  &.locked {
+    pointer-events: none;
+    opacity: 0.6;
+  }
+
+  &.correct {
+    background-color: var(--color-success);
+    color: white;
+  }
+
+  &.incorrect {
+    background-color: var(--color-error);
+    color: white;
   }
 }

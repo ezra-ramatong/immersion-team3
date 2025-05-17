@@ -1,7 +1,10 @@
 import { getState } from "../../state.js";
-import { createElement, appendChildren } from "../../utils/dom.js";
+import {
+  createElement,
+  appendChildren,
+  selectElements,
+} from "../../utils/dom.js";
 import { startQuestionTimer } from "../../utils/timer.js";
-import { handleAnswer } from "../handlers/handleAnswer.js";
 
 /**
  * Renders a true/false question.
@@ -25,6 +28,7 @@ export function createTrueFalseQuestion(data, onNext) {
   options.forEach((opt) => {
     const optionDiv = createElement("div", ["option"]);
     optionDiv.textContent = opt.text;
+    optionDiv.dataset.value = opt.value;
 
     optionDiv.addEventListener("click", () => {
       if (answered) return;
@@ -32,17 +36,37 @@ export function createTrueFalseQuestion(data, onNext) {
 
       timer.clear();
 
-      handleAnswer(optionDiv, optionsContainer, onNext);
+      markAnswers(optionDiv, data.correct_answer);
+
+      setTimeout(onNext, 1500);
     });
 
     optionsContainer.appendChild(optionDiv);
   });
 
+  const markAnswers = (selectedEl, correctValue) => {
+    const allOptions = selectElements(".option", optionsContainer);
+    allOptions.forEach((el) => {
+      const isCorrect = String(el.dataset.value) === String(correctValue);
+
+      if (isCorrect) {
+        el.classList.add("correct");
+      } else if (el === selectedEl) {
+        el.classList.add("incorrect");
+      }
+
+      el.classList.add("locked");
+    });
+  };
+
   const timer = startQuestionTimer(timePerQuestion, () => {
     if (!answered) {
       answered = true;
       console.log("Time's up!");
-      onNext();
+
+      markAnswers(null, data.correct_answer);
+
+      setTimeout(onNext, 1500);
     }
   });
 
