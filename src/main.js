@@ -3,7 +3,7 @@
 const leaderBoardEl = document.getElementById("leaderboard-body");
 const categoryEl = document.querySelector("select");
 
- const playerRes = [
+ /*const playerRes = [
     {name: "Jonh Doe",
     score: 5,
     category: "CSS"},
@@ -16,7 +16,7 @@ const categoryEl = document.querySelector("select");
     {name: "Me Doe",
     score: 6,
     category: "JS"}
- ];
+ ];*/
 
  localStorage.setItem("Results", JSON.stringify(playerRes));
  let dbPlayers = JSON.parse(localStorage.getItem("Results")) || [];
@@ -41,12 +41,12 @@ function getRandomImgs() {
 
     players.forEach((player, i) => {
         const randomAvatar = getRandomImgs();
-        const row = document.createElement("tr");
-        row.innerHTML =`
+        const tableRow = document.createElement("tr");
+        tableRow.innerHTML =`
         <td>${i + 1}</td>
         <td><img src="./src/imgs/avatar${randomAvatar}.jpg" alt="profile">${player.name}</td>
         <td>${player.score}</td>`;
-        leaderBoardEl.appendChild(row);
+        leaderBoardEl.appendChild(tableRow);
     });
  }
 
