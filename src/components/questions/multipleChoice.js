@@ -1,7 +1,7 @@
 import { getState } from "../../state.js";
 import { createElement } from "../../utils/dom.js";
 import { startQuestionTimer } from "../../utils/timer.js";
-import { handleAnswer } from "../handlers/handleAnswer.js";
+import { markAnswers } from "../../utils/markAnswers.js";
 import { createOptionUI } from "../ui/createOptionUI.js";
 
 export function createMultipleChoiceQuestion(data, onNext) {
@@ -14,12 +14,17 @@ export function createMultipleChoiceQuestion(data, onNext) {
     if (!answered) {
       answered = true;
       console.log("Time's up!");
-      onNext();
+
+      markAnswers(null, data.correct_answer, optionsContainer, "letter");
+
+      setTimeout(onNext, 1500);
     }
   });
 
   data.options.forEach((option) => {
     const optionDiv = createOptionUI(option);
+
+    optionDiv.dataset.letter = option.letter;
 
     optionDiv.addEventListener("click", () => {
       if (answered) return;
@@ -27,9 +32,9 @@ export function createMultipleChoiceQuestion(data, onNext) {
 
       timer.clear();
 
-      handleAnswer(optionDiv, optionsContainer, () => {
-        onNext();
-      });
+      markAnswers(optionDiv, data.correct_answer, optionsContainer, "letter");
+
+      setTimeout(onNext, 1500);
     });
 
     optionsContainer.appendChild(optionDiv);
