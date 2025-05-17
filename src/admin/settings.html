@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz Setting</title>
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <style>
       body {
         margin: 0;
@@ -17,13 +20,13 @@
       }
 
       .container {
-        background: rgba(255, 255, 255, 0.85);
-        width: 900px;
-        height: 600px;
+        background: rgba(255, 255, 255, 0.95);
+        width: 420px;
+        min-height: 420px;
         text-align: center;
-        padding: 80px 48px 56px 48px;
-        position: relative;
-        clip-path: polygon(0 0, 100% 0, 50% 100%);
+        padding: 48px 32px 32px 32px;
+        border-radius: 18px;
+        box-shadow: 0 8px 32px rgba(79, 140, 255, 0.18);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -38,27 +41,32 @@
         font-size: 30px;
         margin-top: 0;
         margin-bottom: 18px;
-        width: 90%;
+        width: 100%;
         position: static;
       }
 
-      .questions-number {
-        margin: 56px auto 0 auto;
+      .questions-number,
+      .timer {
+        margin: 32px auto 0 auto;
+        width: 100%;
       }
 
-      .questions-number p {
-        font-size: 24px;
+      .questions-number p,
+      .timer p {
+        font-size: 20px;
         font-weight: bold;
-        margin-bottom: 24px;
+        margin-bottom: 18px;
         color: #4f8cff;
         letter-spacing: 1px;
       }
 
-      .quantity-button {
+      .quantity-button,
+      .time-limit {
         display: flex;
         justify-content: center;
         gap: 18px;
         align-items: center;
+        margin-bottom: 8px;
       }
 
       .circle {
@@ -105,23 +113,73 @@
         background: linear-gradient(90deg, #3a7bd5 60%, #a6c1ee 100%);
         box-shadow: 0 8px 32px rgba(79, 140, 255, 0.24);
       }
+
+      .plus-btn {
+        background: #4f8cff;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        font-size: 22px;
+        margin-left: 10px;
+        cursor: pointer;
+        transition: background 0.2s;
+        box-shadow: 0 2px 8px rgba(79, 140, 255, 0.12);
+      }
+      .plus-btn:hover {
+        background: #3a7bd5;
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="header"></div>
+      <!-- Add the plus buttons and input fields in your HTML -->
       <div class="questions-number">
         <p>Questions Quantity:</p>
-        <div class="quantity-button" id="quantityButton">
-          <div class="circle">&#60;</div>
-          <div class="circle">&#62;</div>
+        <div
+          style="display: flex; align-items: center; justify-content: center"
+        >
+          <div class="quantity-button" id="quantityButton">
+            <div class="circle">&#60;</div>
+            <div class="circle">&#62;</div>
+          </div>
+          <button
+            id="addQuestionBtn"
+            class="plus-btn"
+            title="Add custom quantity"
+          >
+            +
+          </button>
+          <input
+            id="customQuestionInput"
+            type="number"
+            min="1"
+            max="100"
+            style="width: 60px; margin-left: 8px; display: none"
+          />
         </div>
       </div>
       <div class="timer">
         <p>Time limit:</p>
-        <div class="time-limit" id="timeLimit">
-          <div class="circle">&#60;</div>
-          <div class="circle">&#62;</div>
+        <div
+          style="display: flex; align-items: center; justify-content: center"
+        >
+          <div class="time-limit" id="timeLimit">
+            <div class="circle">&#60;</div>
+            <div class="circle">&#62;</div>
+          </div>
+          <button id="addTimeBtn" class="plus-btn" title="Add custom time">
+            +
+          </button>
+          <input
+            id="customTimeInput"
+            type="number"
+            min="1"
+            max="600"
+            style="width: 60px; margin-left: 8px; display: none"
+          />
         </div>
       </div>
       <button class="save-button">Save</button>
@@ -229,14 +287,65 @@
 
       document.getElementById("quantityButton").children[0].onclick = () =>
         prev("questions");
+
       document.getElementById("quantityButton").children[
         document.getElementById("quantityButton").children.length - 1
       ].onclick = () => next("questions");
+
       document.getElementById("timeLimit").children[0].onclick = () =>
         prev("time");
+
       document.getElementById("timeLimit").children[
         document.getElementById("timeLimit").children.length - 1
       ].onclick = () => next("time");
+
+      document.getElementById("addQuestionBtn").onclick = function () {
+        const input = document.getElementById("customQuestionInput");
+        input.style.display = "inline-block";
+        input.value = "";
+        input.focus();
+      };
+
+      document.getElementById("customQuestionInput").onblur = function () {
+        this.style.display = "none";
+      };
+
+      document.getElementById("customQuestionInput").onkeydown = function (e) {
+        if (e.key === "Enter") {
+          const val = parseInt(this.value, 10);
+          if (!isNaN(val) && val > 0 && !questionsNumber.includes(val)) {
+            questionsNumber.push(val);
+            questionsNumber.sort((a, b) => a - b);
+            selectedQuestions = val;
+            renderQuestionsNumber();
+          }
+          this.style.display = "none";
+        }
+      };
+
+      document.getElementById("addTimeBtn").onclick = function () {
+        const input = document.getElementById("customTimeInput");
+        input.style.display = "inline-block";
+        input.value = "";
+        input.focus();
+      };
+
+      document.getElementById("customTimeInput").onblur = function () {
+        this.style.display = "none";
+      };
+
+      document.getElementById("customTimeInput").onkeydown = function (e) {
+        if (e.key === "Enter") {
+          const val = parseInt(this.value, 10);
+          if (!isNaN(val) && val > 0 && !timeLimits.includes(val)) {
+            timeLimits.push(val);
+            timeLimits.sort((a, b) => a - b);
+            selectedTime = val;
+            renderTimeLimit();
+          }
+          this.style.display = "none";
+        }
+      };
 
       window.onload = () => {
         fetch("/api/quiz-settings")
