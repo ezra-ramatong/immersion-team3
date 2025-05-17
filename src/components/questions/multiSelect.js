@@ -1,7 +1,9 @@
-// src/components/questions/multiSelect.js
-
 import { getState } from "../../state.js";
-import { createElement, appendChildren } from "../../utils/dom.js";
+import {
+  createElement,
+  appendChildren,
+  selectElements,
+} from "../../utils/dom.js";
 import { startQuestionTimer } from "../../utils/timer.js";
 
 /**
@@ -15,7 +17,6 @@ export function createMultiSelectQuestion(data, onNext) {
   let answered = false;
 
   const { timePerQuestion } = getState().settings;
-
   const optionsContainer = createElement("div", ["options__container"]);
 
   data.options.forEach((option) => {
@@ -35,8 +36,8 @@ export function createMultiSelectQuestion(data, onNext) {
 
     appendChildren(optionDiv, [letterSpan, textP]);
 
-    // Toggle selection on click
     optionDiv.addEventListener("click", () => {
+      if (answered) return; // disable selection after answering
       optionDiv.classList.toggle("selected");
     });
 
@@ -46,18 +47,31 @@ export function createMultiSelectQuestion(data, onNext) {
   const submitBtn = createElement("button", ["multi-select__submit"]);
   submitBtn.textContent = "Submit";
 
+  const markAnswers = () => {
+    const allOptions = selectElements(".option", optionsContainer);
+    allOptions.forEach((el) => {
+      const letter = el.dataset.optionLetter;
+      const isSelected = el.classList.contains("selected");
+      const isCorrect = data.correct_answer.includes(letter);
+
+      if (isCorrect) {
+        el.classList.add("correct");
+      }
+      if (isSelected && !isCorrect) {
+        el.classList.add("incorrect");
+      }
+
+      el.classList.add("locked");
+    });
+  };
+
   const submit = () => {
     if (answered) return;
     answered = true;
 
     timer.clear();
 
-    // TODO: could collect selected answers here if needed
-
-    // Disable further interaction
-    optionsContainer
-      .querySelectorAll(".option")
-      .forEach((el) => el.classList.add("locked"));
+    markAnswers();
 
     setTimeout(() => {
       onNext();
@@ -70,7 +84,10 @@ export function createMultiSelectQuestion(data, onNext) {
     if (!answered) {
       answered = true;
       console.log("Time's up!");
-      submit();
+
+      markAnswers();
+
+      setTimeout(onNext, 1500);
     }
   });
 
