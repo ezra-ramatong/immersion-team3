@@ -3,25 +3,11 @@
 const leaderBoardEl = document.getElementById("leaderboard-body");
 const categoryEl = document.querySelector("select");
 
- /*const playerRes = [
-    {name: "Jonh Doe",
-    score: 5,
-    category: "CSS"},
-    {name: "Me Myself",
-    score: 12,
-    category: "HTML"},
-    {name: "Justin Tye",
-    score: 8,
-    category: "Gaming"},
-    {name: "Me Doe",
-    score: 6,
-    category: "JS"}
- ];*/
 
- localStorage.setItem("Results", JSON.stringify(playerRes));
- let dbPlayers = JSON.parse(localStorage.getItem("Results")) || [];
+// localStorage.setItem("Results", JSON.stringify(playerRes));
+ //let dbPlayers = JSON.parse(localStorage.getItem("Results")) || [];
 
- function selectByCategory(players, category) {
+ /*function selectByCategory(players, category) {
     if (category === "All Rankings") {
         return players;
     }
@@ -30,11 +16,11 @@ const categoryEl = document.querySelector("select");
         || (category === "Javascript" && player.category === "JS") ||
          (category === "Gaming and computers" && player.category === "Gaming")
     );
- } 
+ } */
 
-function getRandomImgs() {
+/*function getRandomImgs() {
     return Math.floor(Math.random() * 4) + 1;
-}
+}*/
  
  function insertsDataOnBoard(players) {
     leaderBoardEl.innerHTML = "";
