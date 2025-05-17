@@ -20,12 +20,22 @@ export function handleOptionAnswer(
 
   addClasses(selectedEl, ["selected"]);
 
-  const isCorrect = answerContext?.isCorrect || false;
-  if (isCorrect) {
+  const correctLetter = answerContext.correctAnswer;
+
+  selectElements(".option", container).forEach((el) => {
+    const letter = el.dataset.optionLetter;
+
+    if (letter === correctLetter) {
+      addClasses(el, ["correct"]);
+    } else if (el === selectedEl) {
+      addClasses(el, ["incorrect"]);
+    }
+
+    el.classList.add("locked");
+  });
+
+  if (answerContext.isCorrect) {
     incrementScore();
-    addClasses(selectedEl, ["correct"]);
-  } else {
-    addClasses(selectedEl, ["incorrect"]);
   }
 
   setTimeout(onComplete, 1500);
