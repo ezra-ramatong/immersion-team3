@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background: #f4f6fa;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .center-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+      h1 {
+        margin-top: 40px;
+        color: #333;
+        font-size: 2.2rem;
+      }
+      hr {
+        width: 200px;
+        border: none;
+        border-top: 3px solid #4f8cff;
+        margin: 24px auto 40px auto;
+      }
+      .dashboard-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 0;
+      }
+      .icon-button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #fff;
+        border: none;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+        padding: 2rem 2.5rem;
+        text-decoration: none;
+        color: #222;
+        font-size: 1.1rem;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+        cursor: pointer;
+        min-width: 180px;
+      }
+      .icon-button i {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #4f8cff;
+      }
+      .icon-button span {
+        font-weight: 500;
+        letter-spacing: 0.5px;
+      }
+      .icon-button:hover {
+        box-shadow: 0 6px 24px rgba(79, 140, 255, 0.18);
+        transform: translateY(-4px) scale(1.04);
+        color: #4f8cff;
+      }
+      button {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+      button:focus {
+        outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center-wrapper">
+      <h1>Welcome Admin!</h1>
+      <hr />
+      <div class="dashboard-buttons">
+        <button>
+          <a href="questions.html" class="icon-button">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <span>Manage Questions</span>
+          </a>
+        </button>
+        <button>
+          <a href="settings.html" class="icon-button">
+            <i class="fa-solid fa-gear"></i>
+            <span>Quiz Settings</span>
+          </a>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
