@@ -1,10 +1,7 @@
 import { getState } from "../../state.js";
-import {
-  createElement,
-  appendChildren,
-  selectElements,
-} from "../../utils/dom.js";
+import { createElement, appendChildren } from "../../utils/dom.js";
 import { startQuestionTimer } from "../../utils/timer.js";
+import { markAnswers } from "../../utils/markAnswers.js";
 
 /**
  * Renders a true/false question.
@@ -36,7 +33,7 @@ export function createTrueFalseQuestion(data, onNext) {
 
       timer.clear();
 
-      markAnswers(optionDiv, data.correct_answer);
+      markAnswers(optionDiv, data.correct_answer, optionsContainer, "value");
 
       setTimeout(onNext, 1500);
     });
@@ -44,27 +41,12 @@ export function createTrueFalseQuestion(data, onNext) {
     optionsContainer.appendChild(optionDiv);
   });
 
-  const markAnswers = (selectedEl, correctValue) => {
-    const allOptions = selectElements(".option", optionsContainer);
-    allOptions.forEach((el) => {
-      const isCorrect = String(el.dataset.value) === String(correctValue);
-
-      if (isCorrect) {
-        el.classList.add("correct");
-      } else if (el === selectedEl) {
-        el.classList.add("incorrect");
-      }
-
-      el.classList.add("locked");
-    });
-  };
-
   const timer = startQuestionTimer(timePerQuestion, () => {
     if (!answered) {
       answered = true;
       console.log("Time's up!");
 
-      markAnswers(null, data.correct_answer);
+      markAnswers(null, data.correct_answer, optionsContainer, "value");
 
       setTimeout(onNext, 1500);
     }
