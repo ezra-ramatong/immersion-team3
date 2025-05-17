@@ -1,5 +1,3 @@
-import { User } from "../models/user_model.js";
-
 class UserService {
   getAllQuestions() {
     return fetch("http://localhost:3000/api/questions")
@@ -34,4 +32,3 @@ class UserService {
       });
   }
 }
-
