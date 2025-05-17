@@ -1,6 +1,6 @@
 import { User } from "../models/user_model.js";
 
-class LocalStorageService {
+export class LocalStorageService {
   saveUser(user) {
     if (user instanceof User) {
       localStorage.setItem(user.userName.toString(), JSON.stringify(user));
@@ -13,17 +13,20 @@ class LocalStorageService {
     }
   }
 
-  get_leaderboard() {
+  getLeaderboard() {
     const leaderBoard = [];
 
     for (let i = 0; i < localStorage.length; i++) {
-      const userName = localStorage.getItem(localStorage.key(i)).userName;
-      const score = localStorage.getItem(localStorage.key(i)).score;
-      leaderBoard.push({ userName: userName, score: score });
+      const userName = localStorage.getItem(localStorage.key(i));
+      const score = localStorage.getItem(localStorage.key(i));
+
+      leaderBoard.push(userName);
+      leaderBoard.push(score);
     }
 
-    return leaderBoard.sort(function (userOne, userTwo) {
+    return leaderBoard;
+    /*return leaderBoard.sort(function (userOne, userTwo) {
       return userTwo.score - userOne.score;
-    });
+    });*/
   }
 }
