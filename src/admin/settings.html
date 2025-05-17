@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz Setting - Quantity Select</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <title>Quiz Setting</title>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <style>
       body {
         margin: 0;
@@ -113,25 +113,34 @@
       <div class="questions-number">
         <p>Questions Quantity:</p>
         <div class="quantity-button" id="quantityButton">
-          <div class="circle" onclick="prev()">&#60;</div>
-          <div class="circle" onclick="next()">&#62;</div>
+          <div class="circle">&#60;</div>
+          <div class="circle">&#62;</div>
+        </div>
+      </div>
+      <div class="timer">
+        <p>Time limit:</p>
+        <div class="time-limit" id="timeLimit">
+          <div class="circle">&#60;</div>
+          <div class="circle">&#62;</div>
         </div>
       </div>
       <button class="save-button">Save</button>
     </div>
 
     <script>
-      const questionsNumber = [3, 4, 5, 6, 7, 8, 9, 10];
+      const questionsNumber = [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+      const timeLimits = [3, 6, 10, 15, 20];
       let startIndex = 0;
+      let timeIndex = 0;
       const visibleCount = 3;
+      let selectedQuestions = questionsNumber[0];
+      let selectedTime = timeLimits[0];
 
       function renderQuestionsNumber() {
         const quantityButton = document.getElementById("quantityButton");
         const allCircles = quantityButton.querySelectorAll(".circle");
         allCircles.forEach((c, i) => {
-          if (i !== 0 && i !== allCircles.length - 1) {
-            c.remove();
-          }
+          if (i !== 0 && i !== allCircles.length - 1) c.remove();
         });
 
         questionsNumber
@@ -140,6 +149,12 @@
             const div = document.createElement("div");
             div.className = "circle";
             div.textContent = quantity;
+            if (quantity === selectedQuestions)
+              (div.style.background = "#4f8cff"), (div.style.color = "white");
+            div.onclick = () => {
+              selectedQuestions = quantity;
+              renderQuestionsNumber();
+            };
             quantityButton.insertBefore(
               div,
               quantityButton.children[quantityButton.children.length - 1],
@@ -147,21 +162,96 @@
           });
       }
 
-      function prev() {
-        if (startIndex > 0) {
+      function renderTimeLimit() {
+        const timeLimitDiv = document.getElementById("timeLimit");
+        const allCircles = timeLimitDiv.querySelectorAll(".circle");
+        allCircles.forEach((c, i) => {
+          if (i !== 0 && i !== allCircles.length - 1) c.remove();
+        });
+
+        timeLimits
+          .slice(timeIndex, timeIndex + visibleCount)
+          .forEach((limit) => {
+            const div = document.createElement("div");
+            div.className = "circle";
+            div.textContent = limit + "s";
+            if (limit === selectedTime)
+              (div.style.background = "#4f8cff"), (div.style.color = "white");
+            div.onclick = () => {
+              selectedTime = limit;
+              renderTimeLimit();
+            };
+            timeLimitDiv.insertBefore(
+              div,
+              timeLimitDiv.children[timeLimitDiv.children.length - 1],
+            );
+          });
+      }
+
+      function prev(type) {
+        if (type === "questions" && startIndex > 0) {
           startIndex--;
           renderQuestionsNumber();
         }
-      }
-
-      function next() {
-        if (startIndex + visibleCount < questionsNumber.length) {
-          startIndex++;
-          renderQuestionsNumber();
+        if (type === "time" && timeIndex > 0) {
+          timeIndex--;
+          renderTimeLimit();
         }
       }
 
-      window.onload = renderQuestionsNumber;
+      function next(type) {
+        if (
+          type === "questions" &&
+          startIndex + visibleCount < questionsNumber.length
+        ) {
+          startIndex++;
+          renderQuestionsNumber();
+        }
+        if (type === "time" && timeIndex + visibleCount < timeLimits.length) {
+          timeIndex++;
+          renderTimeLimit();
+        }
+      }
+
+      document.querySelector(".save-button").onclick = function () {
+        fetch("/api/quiz-settings", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            questionsNumber: selectedQuestions,
+            timeLimit: selectedTime,
+          }),
+        })
+          .then((res) => res.json())
+          .then((data) => alert("Settings saved!"))
+          .catch(() => alert("Failed to save settings"));
+      };
+
+      document.getElementById("quantityButton").children[0].onclick = () =>
+        prev("questions");
+      document.getElementById("quantityButton").children[
+        document.getElementById("quantityButton").children.length - 1
+      ].onclick = () => next("questions");
+      document.getElementById("timeLimit").children[0].onclick = () =>
+        prev("time");
+      document.getElementById("timeLimit").children[
+        document.getElementById("timeLimit").children.length - 1
+      ].onclick = () => next("time");
+
+      window.onload = () => {
+        fetch("/api/quiz-settings")
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.questionsNumber) selectedQuestions = data.questionsNumber;
+            if (data.timeLimit) selectedTime = data.timeLimit;
+            renderQuestionsNumber();
+            renderTimeLimit();
+          })
+          .catch(() => {
+            renderQuestionsNumber();
+            renderTimeLimit();
+          });
+      };
     </script>
   </body>
 </html>
