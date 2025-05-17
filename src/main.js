@@ -4,4 +4,4 @@ import "./styles/style.css";
 
 import { startQuiz } from "./screens/quizScreen.js";
 
-startQuiz("ez", ["HTML"]);
+startQuiz("ez", ["HTML", "CSS", "JavaScript"]);

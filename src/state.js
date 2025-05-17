@@ -4,7 +4,7 @@ const state = {
   user: { name: "", score: 0 },
   settings: {
     numQuestions: 10,
-    timePerQuestion: 30,
+    timePerQuestion: 5,
     categories: [],
   },
   currentQuestionIndex: 0,
@@ -39,8 +39,20 @@ export function setUser(name) {
   state.user.score = 0; // reset score when starting new quiz
 }
 
-export function setSettings({ numQuestions, timePerQuestion, category }) {
-  state.settings = { numQuestions, timePerQuestion, category };
+export function setSettings(newSettings) {
+  if (
+    typeof newSettings !== "object" ||
+    newSettings === null ||
+    Array.isArray(newSettings)
+  ) {
+    console.warn("setSettings expects an object.");
+    return;
+  }
+
+  state.settings = {
+    ...state.settings,
+    ...newSettings,
+  };
 }
 
 export function setQuestions(questions) {

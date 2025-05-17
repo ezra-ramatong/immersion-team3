@@ -1,6 +1,9 @@
 export function showPage(pageId) {
   const pages = document.querySelectorAll(".screen");
-  pages.forEach((page) => page.classList.add("hidden"));
+  pages.forEach((page) => {
+    page.classList.add("hidden");
+    page.classList.remove("active");
+  });
 
   const targetPage = document.getElementById(pageId);
   if (targetPage) {
