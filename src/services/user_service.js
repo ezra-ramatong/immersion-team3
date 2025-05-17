@@ -1,8 +1,37 @@
-const { User } = require("../models/user_model.js");
+import { User } from "../models/user_model.js";
 
 class UserService {
-    getAllQuestions(){
-        
-    }
+  getAllQuestions() {
+    return fetch("http://localhost:3000/api/questions")
+      .then((res) => res.json())
+      .then((data) => {
+        return data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }
+
+  getQuestionsByCategory(category) {
+    return fetch("http://localhost:3000/api/questions")
+      .then((res) => res.json())
+      .then((data) => {
+        return data.filter((question) => question.category === category);
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }
+
+  getSettings() {
+    return fetch("http://localhost:3000/api/quiz-settings")
+      .then((res) => res.json())
+      .then((data) => {
+        return data;
+      })
+      .catch((error) => {
+        throw new Error(error);
+      });
+  }
 }
 

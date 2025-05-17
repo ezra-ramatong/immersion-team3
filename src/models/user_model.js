@@ -1,4 +1,4 @@
-class User {
+export class User {
   #firstName;
   #lastName;
   #userName;
@@ -7,7 +7,7 @@ class User {
 
   /*set to default 30seconds admin can configure the time  and create a method to expose it 
   to the front-end*/
-  #timePerQuestion = 30;
+  #timePerQuestion;
   #category;
   #questions = [];
   #currentQuestionIndex = 0;
@@ -100,5 +100,3 @@ class User {
     this.#highScores = highScores;
   }
 }
-
-model.exports = { User };
