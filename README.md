@@ -67,6 +67,9 @@ npm -v
 - `npm run build` — Build for production
 - `npm run preview` — Preview the production build locally
 - `npm run format` — Run Prettier
+- `npm run dev `→ just Vite
+- `npm run dev:server `→ just backend
+- `npm start `→ both together via concurrently
 
 ---
 
