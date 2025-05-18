@@ -20,7 +20,7 @@ const startBtn = selectElement(".start-btn");
 
 // Navigation: go to user info screen
 startBtn.onclick = () => {
-  //showPage("user-info-screen");
+  showPage("user-info-screen");
 };
 
 // Handle user submission
@@ -69,10 +69,10 @@ submitBtn.onclick = async () => {
 
     user.questions = limitedQuestions;
     // user.numQuestions = questions.length;
-
+ 
     // Optionally save user to localStorage
     localStorageService.saveUser(user);
-
+    
     // Navigate to quiz screen
     showPage("quiz-screen");
 

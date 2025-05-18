@@ -12,6 +12,7 @@ function showResultsPage(user) {
   const percent = Math.round((user.correctAnswers / user.numQuestions) * 100);
   usernameEl.textContent = `Username: ${user.userName}`;
   scoreEl.textContent = `Score: ${user.correctAnswers} / ${user.numQuestions} (${percent}%)`;
+  
 }
 
 export function startQuiz(user) {

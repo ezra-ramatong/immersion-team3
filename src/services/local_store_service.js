@@ -13,12 +13,6 @@ export class LocalStorageService {
     }
   }
 
-  incrementScore(user){
-    if(user instanceof User){
-      user.score += 1;
-    }
-  }
-
   getLeaderboard(category) {
     const players = [];
 
@@ -37,7 +31,7 @@ export class LocalStorageService {
     return players
       .filter((player) => player.category === category)
       .sort(function (player1, player2) {
-        return player2.score - player1.score;
+        return player2.correctAnswers - player1.correctAnswers;
       });
   }
 }
