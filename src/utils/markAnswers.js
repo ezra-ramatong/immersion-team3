@@ -21,7 +21,7 @@ export function markAnswers(
 
     if (isCorrect) {
       el.classList.add("correct");
-    } else if (el === selectedEl) {
+    } else {
       el.classList.add("incorrect");
     }
     el.classList.add("locked");

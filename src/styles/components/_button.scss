@@ -14,4 +14,13 @@ button {
   line-height: normal;
 }
 
+button:hover {
+  background: var(--color-purple);
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
 /* TODO: BTN HOVER STATE */

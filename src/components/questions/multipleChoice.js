@@ -27,8 +27,8 @@ export function createMultipleChoiceQuestion(
     onTick,
   );
 
-  data.options.forEach((option) => {
-    const optionDiv = createOptionUI(option);
+  data.options.forEach((option, index) => {
+    const optionDiv = createOptionUI(option, index);
 
     optionDiv.dataset.letter = option.letter;
 

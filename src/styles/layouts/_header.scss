@@ -1,7 +1,9 @@
 .screen__header {
-  height: 12vh;
-  background: var(--color-primary);
-  color: var(--color-text);
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 4rem;
+  padding-inline: 2vw;
+  margin-top: 1.25rem;
 }

@@ -12,11 +12,19 @@
 @use "layouts/screen";
 @use "layouts/screen-start";
 @use "layouts/screen-user";
+@use "layouts/quiz";
 
 @use "components/option";
+@use "components/question";
 @use "components/multiple-choice";
+@use "components/fill-blanks";
 @use "components/progress-bar";
 @use "components/timer";
 @use "components/button";
 @use "components/checkbox";
+
+@use "components/results";
+@use "components/points";
+
 @use "layouts/screen-results";
+

@@ -3,11 +3,12 @@
   padding-inline: 2rem;
   height: 53px;
   flex-shrink: 0;
-  background: var(--color-blue);
+  /* background: var(--color-blue); */
   border-radius: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
 input[type="checkbox"] {

@@ -37,12 +37,10 @@ export function createFillInBlanksQuestion(
     });
   };
 
-  // Keyboard submit (Enter key)
   input.addEventListener("keydown", (e) => {
     if (e.key === "Enter") submit();
   });
 
-  // Button submit
   submitBtn.addEventListener("click", submit);
 
   const timer = startQuestionTimer(
