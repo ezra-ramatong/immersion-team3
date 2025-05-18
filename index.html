@@ -1,46 +1,32 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@100..900&display=swap"
-  rel="stylesheet">
-<title>Vite App</title>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Spline+Sans:wght@300..700&display=swap"
+    rel="stylesheet">
+  <title>Vite App</title>
 </head>
 
 <body>
 
   <!--Start screen-->
-  <div id="start-screen" class="screen active">
-    <!-- Start screen content: user enters name, selects categories -->
-    <header class="header"></header>
-    <section class="welcome-intro">
-      <div class="left-panel">
-        <h1>TECH QUIZ: TEST YOUR KNOWLEDGE AND SKILLS</h1>`
-        <h2>WELCOME TO OUR INTERACTIVE QUIZ</h2>
+  <div id="start-screen" class="screen screen--start active">
+    <section class="screen--start__left">
+      <h1 class="title">Memory Leak</h1>
+      <p class="description">The only place you're allowed to leak memory.</p>
+      <button type="button" class="start-btn button">Get started</button>
+    </section>
+    <section class="screen--start__right">
+      <div class="leaderboard"></div>
+    </section>
 
-        <p>
-          Are you ready to put your tech knowlegde to the test?
-          We have fun tech questions from various tech categories that you can tackle.
-          </br></br>
-          Take our quiz and see where you stand in our leaderboard of previous techies who took the test.
-          With our randomised questions you can take as many tests as you please.
-          </br></br>
-          The tech landscape is a forever changing field, changes rapidly on a daily basis, stay up to
-          date with the technology that impacts our daily lives.
-          </br></br>
-          Test how much you know and remember to have fun!
-        </p>
-
-        <input type="button" class="start-btn" value="TAKE QUIZ">
-      </div>
-
-      <div class="right-panel">
-        <img src="./src/assets/landing-page-side-panel.JPG" alt="right-panel-image">
-      </div>
+    <!--LEAVE BUTTON-->
     </section>
 
   </div>
