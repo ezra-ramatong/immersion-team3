@@ -12,6 +12,16 @@
     font-weight: 700;
     line-height: normal;
     margin-top: 3rem;
+
+    @media (max-width: 600px) {
+      font-size: 1.5rem;
+      margin-left: 0;
+      margin-top: 1rem;
+      text-align: center;
+      width: 100%;
+      display: block;
+      margin-right: 0;
+    }
   }
 
   &__left,
@@ -31,6 +41,19 @@
       display: inline-block;
       /* align-self: center; */
       margin-top: 10%;
+
+      @media (max-width: 600px) {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-right: none;
+      margin: 0;
+      padding: 1rem 0;
     }
   }
 
@@ -39,7 +62,12 @@
     border: none;
   }
 
-
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .form--user,
@@ -65,7 +93,6 @@
     text-align: center;
     margin-top: 0.5rem;
   }
-
 }
 
 .form--user input {
@@ -77,6 +104,12 @@
   border-radius: 10px;
   border: 3px solid #000;
   font-size: var(--fs-text-xl);
+
+  @media (max-width: 600px) {
+    width: 90vw;
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
 }
 
 .form--categories {
@@ -101,6 +134,10 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+
+    @media (max-width: 600px) {
+      font-size: 1rem;
+    }
   }
 
   .checkboxes {
@@ -109,10 +146,44 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
+
+    @media (max-width: 600px) {
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
   }
 
   button {
     margin-top: 4rem;
     align-self: center;
+
+    @media (max-width: 600px) {
+      margin-top: 2rem;
+    }
   }
+
+  @media (max-width: 600px) {
+    padding: 0 0.5rem;
+  }
+
+  @media (max-width: 900px) {
+  .screen--user {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+
+    &__left,
+    &__right {
+      width: 100%;
+      border-right: none;
+      padding: 1.5rem 1rem;
+      margin: 0;
+    }
+
+    &__right {
+      margin-top: 2rem;
+    }
+  }
+}
 }

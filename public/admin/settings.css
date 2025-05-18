@@ -1,0 +1,168 @@
+body {
+  margin: 0;
+  font-family: "Fraunces", serif;
+  background: #f5f5dc; /* beige */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: black;
+}
+
+.container {
+  background: coral;
+  width: 420px;
+  min-height: 420px;
+  text-align: center;
+  padding: 48px 32px 32px 32px;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  color: black;
+}
+
+.header {
+  color: black;
+  font-weight: bold;
+  padding: 16px;
+  font-size: 30px;
+  margin-top: 0;
+  margin-bottom: 18px;
+  width: 100%;
+  position: static;
+}
+
+.back-btn {
+  position: absolute;
+  left: 32px;
+  top: 32px;
+  text-decoration: none;
+  background: black;
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.questions-number p,
+.timer p {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 18px;
+  color: black;
+  letter-spacing: 1px;
+}
+
+.quantity-button,
+.time-limit {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.circle {
+  width: 48px;
+  height: 48px;
+  border: 2px solid black;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.circle:hover {
+  background: #4f8cff;
+  color: black;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.save-button {
+  background: black;
+  color: white;
+  padding: 14px 38px;
+  border: none;
+  border-radius: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 32px;
+  font-size: 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+}
+
+.save-button:hover {
+  background: #4f8cff;
+  color: black;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.plus-btn {
+  background: black;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 22px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plus-btn:hover {
+  background: #4f8cff;
+  color: black;
+}
+
+input[type="number"]#customQuestionInput,
+input[type="number"]#customTimeInput {
+  padding: 10px 12px;
+  border: 2px solid black;
+  border-radius: 18px;
+  font-size: 18px;
+  color: black;
+  background: #fff;
+  outline: none;
+  margin-left: 8px;
+  width: 90px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+}
+
+input[type="number"]#customQuestionInput:focus,
+input[type="number"]#customTimeInput:focus {
+  border: 2px solid black;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+#questionHelper,
+#timeHelper,
+#selectedValues,
+#saveMsg {
+  color: black;
+}

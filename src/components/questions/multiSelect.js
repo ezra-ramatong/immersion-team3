@@ -4,6 +4,7 @@ import {
   selectElements,
 } from "../../utils/dom.js";
 import { startQuestionTimer } from "../../utils/timer.js";
+import { createOptionUI } from "../ui/createOptionUI.js";
 
 /**
  * Renders a multi-select question.
@@ -20,28 +21,13 @@ export function createMultiSelectQuestion(
   timePerQuestion,
 ) {
   const container = createElement("div", ["multi-select__container"]);
-  
-  let answered = false; 
 
+  let answered = false;
 
   const optionsContainer = createElement("div", ["options__container"]);
 
-  data.options.forEach((option) => {
-    const optionDiv = createElement(
-      "div",
-      ["option", `option--${option.letter.toLowerCase()}`],
-      {
-        "data-option-letter": option.letter,
-      },
-    );
-
-    const letterSpan = createElement("span", ["option__letter"]);
-    letterSpan.textContent = `${option.letter}.`;
-
-    const textP = createElement("p");
-    textP.textContent = option.text;
-
-    appendChildren(optionDiv, [letterSpan, textP]);
+  data.options.forEach((option, index) => {
+    const optionDiv = createOptionUI(option, index);
 
     optionDiv.addEventListener("click", () => {
       if (answered) return; // disable selection after answering
@@ -53,6 +39,7 @@ export function createMultiSelectQuestion(
 
   const submitBtn = createElement("button", ["multi-select__submit"]);
   submitBtn.textContent = "Submit";
+  appendChildren(optionsContainer, [submitBtn]);
 
   const markAnswers = () => {
     const allOptions = selectElements(".option", optionsContainer);
@@ -61,13 +48,14 @@ export function createMultiSelectQuestion(
       const isSelected = el.classList.contains("selected");
       const isCorrect = data.correct_answers.includes(letter);
 
-      if (isCorrect) {
+      if (isCorrect && isSelected) {
         el.classList.add("correct");
-      }
-      if (isSelected && !isCorrect) {
+      } else if (isSelected && !isCorrect) {
         el.classList.add("incorrect");
+      } else if (!isSelected && isCorrect) {
+        el.classList.add("missed");
+        //TODO: Should add text
       }
-
       el.classList.add("locked");
     });
   };
@@ -116,6 +104,6 @@ export function createMultiSelectQuestion(
     onTick,
   );
 
-  appendChildren(container, [optionsContainer, submitBtn]);
+  appendChildren(container, [optionsContainer]);
   return container;
 }

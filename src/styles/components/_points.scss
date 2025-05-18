@@ -1,0 +1,24 @@
+.points__container {
+  background: var(--color-blue);
+}
+
+.points-text {
+
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  user-select: none;
+  margin: 0.5rem 0;
+}
+
+.points {
+  @media (max-width: 600px) {
+    font-size: 1.1rem;
+    padding: 0.5rem 0.5rem;
+    width: 90vw;
+    max-width: 300px;
+    margin: 0.5rem auto;
+    text-align: center;
+    display: block;
+  }
+}

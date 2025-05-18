@@ -1,6 +1,7 @@
 import { createElement, appendChildren } from "../../utils/dom.js";
 import { startQuestionTimer } from "../../utils/timer.js";
 import { markAnswers } from "../../utils/markAnswers.js";
+import { createOptionUI } from "../ui/createOptionUI.js";
 
 /**
  * Renders a true/false question.
@@ -19,10 +20,10 @@ export function createTrueFalseQuestion(data, onNext, onTick, timePerQuestion) {
 
   const optionsContainer = createElement("div", ["options__container"]);
 
-  options.forEach((opt) => {
-    const optionDiv = createElement("div", ["option"]);
-    optionDiv.textContent = opt.text;
-    optionDiv.dataset.value = opt.value;
+  options.forEach((option) => {
+    const optionDiv = createOptionUI(option);
+
+    optionDiv.dataset.value = option.value;
 
     optionDiv.addEventListener("click", () => {
       if (answered) return;
@@ -31,7 +32,7 @@ export function createTrueFalseQuestion(data, onNext, onTick, timePerQuestion) {
       timer.clear();
 
       const correctValue = String(data.correct_answer).toLowerCase() === "true";
-      if (opt.value === correctValue && window.currentUser) {
+      if (option.value === correctValue && window.currentUser) {
         window.currentUser.correctAnswers++;
       }
 

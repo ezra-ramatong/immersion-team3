@@ -41,7 +41,6 @@ export function handleOptionAnswer(
   });
 
   if (answerContext.isCorrect && currentUser) {
-    incrementScore();
     currentUser.correctAnswers++;
   }
 
@@ -60,11 +59,10 @@ export function handleInputAnswer(inputEl, onComplete, answerContext) {
 
   inputEl.disabled = true;
 
-  const feedbackMsg = document.createElement("div");
+  const feedbackMsg = document.createElement("p");
   feedbackMsg.classList.add("feedback");
 
   if (userAnswer === correctAnswer && currentUser) {
-    incrementScore();
     currentUser.correctAnswers++;
 
     addClasses(inputEl, ["correct"]);

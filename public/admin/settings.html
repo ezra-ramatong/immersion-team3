@@ -9,166 +9,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <script src="settings.js" defer></script>
-    <style>
-      body {
-        margin: 0;
-        font-family: "Segoe UI", Arial, sans-serif;
-        background: #4f8cff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
-
-      .container {
-        background: rgba(255, 255, 255, 0.95);
-        width: 420px;
-        min-height: 420px;
-        text-align: center;
-        padding: 48px 32px 32px 32px;
-        border-radius: 18px;
-        box-shadow: 0 8px 32px rgba(79, 140, 255, 0.18);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        overflow: hidden;
-      }
-
-      .header {
-        color: #4f8cff;
-        font-weight: bold;
-        padding: 16px;
-        font-size: 30px;
-        margin-top: 0;
-        margin-bottom: 18px;
-        width: 100%;
-        position: static;
-      }
-
-      .back-btn {
-        position: absolute;
-        left: 32px;
-        top: 32px;
-        text-decoration: none;
-        background: #4f8cff;
-        color: #fff;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 2px 8px rgba(79, 140, 255, 0.12);
-        font-size: 1.3rem;
-      }
-
-      .questions-number,
-      .timer {
-        margin: 32px auto 0 auto;
-        width: 100%;
-      }
-
-      .questions-number p,
-      .timer p {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 18px;
-        color: #4f8cff;
-        letter-spacing: 1px;
-      }
-
-      .quantity-button,
-      .time-limit {
-        display: flex;
-        justify-content: center;
-        gap: 18px;
-        align-items: center;
-        margin-bottom: 8px;
-      }
-
-      .circle {
-        width: 48px;
-        height: 48px;
-        border: 2px solid #4f8cff;
-        background: white;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-weight: bold;
-        font-size: 20px;
-        color: #4f8cff;
-        cursor: pointer;
-        transition:
-          background 0.2s,
-          color 0.2s,
-          box-shadow 0.2s;
-        box-shadow: 0 2px 8px rgba(79, 140, 255, 0.1);
-      }
-      .circle:hover {
-        background: #4f8cff;
-        color: white;
-        box-shadow: 0 4px 16px rgba(79, 140, 255, 0.18);
-      }
-
-      .save-button {
-        background: #4f8cff;
-        color: white;
-        padding: 14px 38px;
-        border: none;
-        border-radius: 28px;
-        font-weight: bold;
-        cursor: pointer;
-        margin-top: 32px;
-        font-size: 18px;
-        box-shadow: 0 4px 16px rgba(79, 140, 255, 0.18);
-        transition:
-          background 0.2s,
-          box-shadow 0.2s;
-      }
-      .save-button:hover {
-        background: linear-gradient(90deg, #3a7bd5 60%, #a6c1ee 100%);
-        box-shadow: 0 8px 32px rgba(79, 140, 255, 0.24);
-      }
-
-      .plus-btn {
-        background: #4f8cff;
-        color: #fff;
-        border: none;
-        border-radius: 50%;
-        width: 32px;
-        height: 32px;
-        font-size: 22px;
-        margin-left: 10px;
-        cursor: pointer;
-        transition: background 0.2s;
-        box-shadow: 0 2px 8px rgba(79, 140, 255, 0.12);
-      }
-      .plus-btn:hover {
-        background: #3a7bd5;
-      }
-
-      input[type="number"]#customQuestionInput,
-      input[type="number"]#customTimeInput {
-        padding: 10px 12px;
-        border: 2px solid #4f8cff;
-        border-radius: 18px;
-        font-size: 18px;
-        color: #4f8cff;
-        background: #fff;
-        outline: none;
-        margin-left: 8px;
-        width: 90px;
-        box-shadow: 0 2px 8px rgba(79, 140, 255, 0.10);
-        transition: border 0.2s, box-shadow 0.2s;
-      }
-      input[type="number"]#customQuestionInput:focus,
-      input[type="number"]#customTimeInput:focus {
-        border: 2px solid #3a7bd5;
-        box-shadow: 0 4px 16px rgba(79, 140, 255, 0.18);
-      }
-    </style>
+    <link rel="stylesheet" href="settings.css" />
   </head>
   <body>
     <div class="container">
@@ -210,7 +51,7 @@
             placeholder="Custom"
           />
         </div>
-        <div id="questionHelper" style="font-size: 13px; color: #888; margin-top: 4px; display: none;">Enter a custom number (1-100) and press <b>Enter</b></div>
+        <div id="questionHelper" style="font-size: 13px; color: black; margin-top: 4px; display: none;">Enter a custom number (1-100) and press <b>Enter</b></div>
       </div>
       <div class="timer">
         <p>Time limit:</p>
@@ -234,9 +75,9 @@
             placeholder="Custom (s)"
           />
         </div>
-        <div id="timeHelper" style="font-size: 13px; color: #888; margin-top: 4px; display: none;">Enter a custom time in seconds (1-600) and press <b>Enter</b></div>
+        <div id="timeHelper" style="font-size: 13px; color: black; margin-top: 4px; display: none;">Enter a custom time in seconds (1-600) and press <b>Enter</b></div>
       </div>
-      <div id="selectedValues" style="margin-top: 18px; font-size: 16px; color: #4f8cff; font-weight: 500;"></div>
+      <div id="selectedValues" style="margin-top: 18px; font-size: 16px; color: black; font-weight: 500;"></div>
       <button class="save-button" aria-label="Save settings">Save</button>
       <div id="saveMsg" style="margin-top: 16px; font-size: 15px; display: none;"></div>
     </div>

@@ -1,0 +1,41 @@
+.fill-in-blanks__container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  align-items: center;
+
+  input {
+    margin-top: 5rem;
+    background: var(--color-background);
+    width: 476px; // TODO: USE PADDING FOR RESPONSIVENESS
+    padding: 0.5rem;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 3px solid #000;
+    font-size: var(--fs-text-xl);
+
+    @media (max-width: 600px) {
+      width: 90vw;
+      font-size: 1rem;
+      margin-top: 2rem;
+    }
+  }
+
+  .feedback {
+    font-family: "Spline Sans";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    @media (max-width: 600px) {
+      font-size: 1.1rem;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 600px) {
+    gap: 2rem;
+    padding: 0 0.5rem;
+  }
+}
