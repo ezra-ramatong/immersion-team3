@@ -41,11 +41,8 @@ export function handleOptionAnswer(
   });
 
   if (answerContext.isCorrect && currentUser) {
+    incrementScore();
     currentUser.correctAnswers++;
-    console.log(
-      "Incremented correctAnswers (option):",
-      currentUser.correctAnswers,
-    );
   }
 
   setTimeout(onComplete, 1500);
@@ -67,8 +64,9 @@ export function handleInputAnswer(inputEl, onComplete, answerContext) {
   feedbackMsg.classList.add("feedback");
 
   if (userAnswer === correctAnswer && currentUser) {
+    incrementScore();
     currentUser.correctAnswers++;
-    console.log("Incremented correctAnswers:", currentUser.correctAnswers);
+
     addClasses(inputEl, ["correct"]);
     feedbackMsg.textContent = "Correct!";
     feedbackMsg.classList.add("feedback--correct");

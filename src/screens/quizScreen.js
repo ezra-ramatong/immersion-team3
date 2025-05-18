@@ -21,6 +21,7 @@ export function startQuiz(user) {
   currentUser.currentQuestionIndex = 0;
   currentUser.correctAnswers = 0;
   setCurrentUser(user);
+
   showPage("quiz-screen");
   renderQuizPage(currentUser.currentQuestion);
 }

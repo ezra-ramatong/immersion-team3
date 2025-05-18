@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("path");
+    background-position: center center;
+    background-size: cover;
+    color: aliceblue;
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+td img {
+    width: 36px;
+    height: 36px;
+    border-radius: 60%;
+    margin-right: 1.2rem;
+    vertical-align: middle;
+}
+
+table, th, td {
+    padding: 1rem;
+    color: black;
+}
+
+table {
+    width: 100%;
+    
+}
+
+div.table-rank {
+    width: 35vw;
+    height: 90vh;
+    background-color: #fff5;
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+    overflow: hidden;
+    table-layout: auto;
+}
+
+.table-header {
+    width: 100%;
+    height: 17%;
+    background-color: #fff4;
+}
+
+.table-header h1 {
+    color: rgb(18, 36, 36);
+    text-align: center;
+}
+.table-header h4 {
+    color: rgb(18, 36, 36);
+    text-align: center;
+}
+
+div select {
+    
+    color: rgb(18, 36, 36);
+    width: 100%;
+    background-color: #fff4;
+    text-align: center;
+}
+
+.table-body {
+    width: 90%;
+    max-height: calc(80% - 1.2rem);
+    background-color: aliceblue;
+    margin: 0.8rem auto;
+    border-radius: 8px;
+    overflow: auto;
+}
+
+.table-body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table-body::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background-color: rgb(57, 130, 139);
+    visibility: hidden;
+}
+
+.table-body:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d5d5;
+    padding: 8px 20px;
+    border-radius: 4px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+    transition: .4s ease-in-out;
+}
+
+tbody tr:hover {
+    background-color: rgba(3, 175, 132, 0.11);
+}
+
+tbody, tr, td {
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    div.table-rank {
+    width: 90vw;
+    overflow: hidden;
+    table-layout: auto;
+    }
+}

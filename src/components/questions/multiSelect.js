@@ -20,7 +20,9 @@ export function createMultiSelectQuestion(
   timePerQuestion,
 ) {
   const container = createElement("div", ["multi-select__container"]);
+  
   let answered = false; 
+
 
   const optionsContainer = createElement("div", ["options__container"]);
 

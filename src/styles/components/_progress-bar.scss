@@ -1,0 +1,33 @@
+.progress-bar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* spacing between label and bar */
+  margin: 0.5rem 0;
+}
+
+.progress-bar__label {
+  font-weight: 600;
+  font-size: 1rem;
+  min-width: 3rem;
+  /* keeps label width consistent */
+  text-align: right;
+  color: #333;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  /* takes remaining space */
+  height: 8px;
+  background-color: #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background-color: #4caf50;
+  /* green fill */
+  width: 0%;
+  transition: width 0.3s ease;
+}
