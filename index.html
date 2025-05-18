@@ -37,11 +37,11 @@
     <div class="screen--user__left">
       <span class="logo">Memory Leak</span>
       <span>1.</span>
-      <form id="user-details" class="form--user">
+      <div id="user-details" class="form--user">
         <h2 class="form--user__title">Identify Yourself</h2>
         <p class="form--user__description">A short and punchy nickname will do.</p>
         <input type="text" name="userName" id="userName" required>
-      </form>
+      </div>
     </div>
 
     <div class="screen--user__right">
@@ -54,6 +54,7 @@
           <div class="checkbox bg-blue">
             <label for="css">
               <input type="checkbox" id="css" value="css">
+              <span class="custom-checkbox"></span>
               CSS
             </label>
           </div>
@@ -92,12 +93,14 @@
 
 
   <!--Quiz screen-->
-  <div id="quiz-screen" class="screen hidden">
-    <header class="screen__header"></header>
+  <div id="quiz-screen" class="screen screen--quiz hidden">
+    <header class="screen__header">
+      <div>
+    </header>
     <section class="screen__question"></section>
   </div>
 
-    <!--Results screen-->
+  <!--Results screen-->
   <div id="results-screen" class="screen hidden">
     <h2>Quiz Results</h2>
     <p id="results-username"></p>

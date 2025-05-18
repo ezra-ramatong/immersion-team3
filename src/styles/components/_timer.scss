@@ -1,7 +1,17 @@
 .timer-text {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   text-align: center;
   user-select: none;
   margin: 0.5rem 0;
+}
+
+.timer-container {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.timer-icon {
+  width: 36px;
 }
