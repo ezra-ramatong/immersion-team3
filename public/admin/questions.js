@@ -135,5 +135,3 @@ function addQuestion(category) {
       alert("Error saving questions: " + err.message);
     });
 }
-
-module.exports = { addQuestion, renderQuestions, renderHeaders, renderOptions, renderAnswer };

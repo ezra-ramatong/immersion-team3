@@ -1,4 +1,4 @@
 {
-  "questionsNumber": 15,
-  "timeLimit": 20
+  "numQuestions": 5,
+  "timePerQuestion": 6
 }
