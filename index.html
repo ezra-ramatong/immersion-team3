@@ -33,22 +33,60 @@
 
 
   <!--User screen-->
-  <div id="user-info-screen" class="screen hidden">
-    <H3>ENTER YOUR DETAILS</H3>
-    <form id="user-details">
-      <label for="username">Username</label>
-      <input type="text" name="userName" id="userName" required>
+  <div id="user-info-screen" class="screen screen--user hidden">
+    <div class="screen--user__left">
+      <span class="logo">Memory Leak</span>
+      <span>1.</span>
+      <form id="user-details" class="form--user">
+        <h2 class="form--user__title">Identify Yourself</h2>
+        <p class="form--user__description">A short and punchy nickname will do.</p>
+        <input type="text" name="userName" id="userName" required>
+      </form>
+    </div>
 
-      <label for="tech-category">Category</label>
-      <select id="tech-category" name="tech-category" required>
-        <option value="general_it" selected>General IT</option>
-        <option value="database_management_systems">Database Management Systems</option>
-        <option value="css">css</option>
-        <option value="computer_hardware">Computer Hardware</option>
-      </select>
+    <div class="screen--user__right">
+      <span>2.</span>
+      <form id="user-categories" class="form--categories">
+        <h2 class="form--categories__title">Categories</h2>
+        <p class="form--categories__description">Think you’ve got this? Select your categories.</p>
 
-      <input type="button" class="submit-user-info" value="submit">
-    </form>
+        <div class="checkboxes">
+          <div class="checkbox bg-blue">
+            <label for="css">
+              <input type="checkbox" id="css" value="css">
+              CSS
+            </label>
+          </div>
+          <div class="checkbox bg-orange">
+            <label for="css">
+              <input type="checkbox" id="css" value="computer_hardware">
+              Computer Hardware
+            </label>
+          </div>
+          <div class="checkbox bg-coral">
+            <label for="css">
+              <input type="checkbox" id="css" value="database_management_systems">
+              Database Management Systems
+            </label>
+          </div>
+          <div class="checkbox bg-blue">
+            <label for="css">
+              <input type="checkbox" id="css" value="general_it">
+              General IT
+            </label>
+          </div>
+        </div>
+        <!-- <select id="tech-category" name="tech-category" required>
+          <option value="general_it" selected>General IT</option>
+          <option value="database_management_systems">Database Management Systems</option>
+          <option value="css">css</option>
+          <option value="computer_hardware">Computer Hardware</option>
+        </select>
+-->
+        <!-- <input type="button" class="submit-user-info" value="submit"> -->
+        <button type="button" class="submit-user-info">Play</button>
+      </form>
+    </div>
   </div>
 
 
@@ -62,33 +100,32 @@
   <!--Highscore screen-->
   <div id="highscore-screen" class="screen hidden">
     <!-- Start screen content: user enters name, selects categories -->
-  </div>
-  <div class="table-rank" id="leaderboard">
-    <div class="table-header">
-      <h1>Leaderboard</h1>
-      <h4>Choose Category</h4>
-      <select>
-        <option>All Rankings</option>
-        <option>HTML</option>
-        <option>CSS</option>
-        <option>Javascript</option>
-        <option>Gaming and computers</option>
-      </select>
+    <div class="table-rank" id="leaderboard">
+      <div class="table-header">
+        <h1>Leaderboard</h1>
+        <h4>Choose Category</h4>
+        <select>
+          <option>All Rankings</option>
+          <option>HTML</option>
+          <option>CSS</option>
+          <option>Javascript</option>
+          <option>Gaming and computers</option>
+        </select>
+      </div>
+      <div class="table-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Position</th>
+              <th>Player Name</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body"></tbody>
+        </table>
+      </div>
     </div>
-    <div class="table-body">
-      <table>
-        <thead>
-          <tr>
-            <th>Position</th>
-            <th>Player Name</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody id="leaderboard-body"></tbody>
-      </table>
-    </div>
   </div>
-
   <script type="module" src="/src/main.js">
     /* Function to select high scores according to category */
     function selectByCategory(players, category) {

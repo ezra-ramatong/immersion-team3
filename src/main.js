@@ -8,6 +8,7 @@ import { LocalStorageService } from "./services/local_store_service.js";
 import QuizService from "./services/QuizService.js"; // renamed from UserService
 import { selectElement } from "./utils/dom.js";
 import { startQuiz } from "./screens/quizScreen.js"; // assumed quiz logic starts here
+import { shuffleArray } from "./utils/shuffle.js";
 
 // Initialize services
 const localStorageService = new LocalStorageService();
@@ -25,15 +26,24 @@ startBtn.onclick = () => {
 // Handle user submission
 submitBtn.onclick = async () => {
   const username = selectElement("#userName").value;
-  const category = selectElement("#tech-category").value;
+  // const category = selectElement("#tech-category").value;
+  const checkboxes = document.querySelectorAll(
+    '#user-categories input[type="checkbox"]:checked',
+  );
+  const selectedCategories = Array.from(checkboxes).map((cb) => cb.value);
 
-  // Basic validation
-  if (!username || !category) {
-    alert("Please enter your username and select a category.");
+  if (!username || selectedCategories.length === 0) {
+    alert("Please enter your username and select at least one category.");
     return;
   }
 
-  const user = new User(username, category);
+  /* // Basic validation
+  if (!username || !category) {
+    alert("Please enter your username and select a category.");
+    return;
+  } */
+
+  const user = new User(username, selectedCategories);
 
   try {
     // Get quiz settings (e.g. time per question)
@@ -45,14 +55,21 @@ submitBtn.onclick = async () => {
     console.log(user.numQuestions);
 
     // Fetch and assign category-specific questions
-    const questions = await quizService.getQuestionsByCategory(category);
+    const questions =
+      await quizService.getQuestionsByCategories(selectedCategories);
     console.log(questions);
+
     if (!questions.length) {
       alert("No questions found for this category. Please try another.");
       return;
     }
 
-    user.questions = questions;
+    const limitedQuestions = shuffleArray(questions).slice(
+      0,
+      user.numQuestions,
+    );
+
+    user.questions = limitedQuestions;
     // user.numQuestions = questions.length;
 
     // Optionally save user to localStorage
