@@ -21,8 +21,7 @@ export function createQuestionUI(questionData, user, onNext) {
   const currentQuestionIndex = user.currentQuestionIndex;
   const timePerQuestion = user.timePerQuestion;
   const numQuestions = user.numQuestions;
-  const totalScore = user.score;
-  console.log("CQUI TIMER: ", timePerQuestion);
+  const totalScore = user.correctAnswers;
 
   // Setup timer and progress bar in header, label etc
   const header = document.querySelector(".screen__header");
