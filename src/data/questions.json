@@ -108,6 +108,207 @@
     "correct_answer": "B"
   },
   {
+    "question_type": "multiple_choice",
+    "question_text": "Which SQL clause is used to filter records?",
+    "category": "database_management_systems",
+    "options": [
+      { "letter": "A", "text": "ORDER BY" },
+      { "letter": "B", "text": "GROUP BY" },
+      { "letter": "C", "text": "WHERE" },
+      { "letter": "D", "text": "HAVING" }
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which command is used to retrieve data from a database?",
+    "category": "database_management_systems",
+    "options": [
+      { "letter": "A", "text": "GET" },
+      { "letter": "B", "text": "SELECT" },
+      { "letter": "C", "text": "EXTRACT" },
+      { "letter": "D", "text": "FETCH" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which of these is a valid SQL constraint?",
+    "category": "database_management_systems",
+    "options": [
+      { "letter": "A", "text": "IF" },
+      { "letter": "B", "text": "CHECK" },
+      { "letter": "C", "text": "TRY" },
+      { "letter": "D", "text": "FOR" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "The PRIMARY KEY must contain unique values.",
+    "category": "database_management_systems",
+    "correct_answer": true
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which SQL statement is used to remove a table definition and all of its data?",
+    "category": "database_management_systems",
+    "options": [
+      { "letter": "A", "text": "DELETE" },
+      { "letter": "B", "text": "REMOVE" },
+      { "letter": "C", "text": "DROP" },
+      { "letter": "D", "text": "CLEAR" }
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "question_type": "fill_in_blanks",
+    "question_text": "A _____ is a set of SQL statements stored in the database and executed as a program.",
+    "category": "database_management_systems",
+    "correct_answer": "stored procedure"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "What does the acronym ACID stand for in databases?",
+    "category": "database_management_systems",
+    "options": [
+      { "letter": "A", "text": "Access, Control, Integrity, Data" },
+      {
+        "letter": "B",
+        "text": "Atomicity, Consistency, Isolation, Durability"
+      },
+      { "letter": "C", "text": "Aggregate, Control, Integrity, Decision" },
+      { "letter": "D", "text": "None of the above" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which command is used to modify the structure of a table?",
+    "category": "database_management_systems",
+    "options": [
+      { "letter": "A", "text": "ALTER" },
+      { "letter": "B", "text": "MODIFY" },
+      { "letter": "C", "text": "CHANGE" },
+      { "letter": "D", "text": "UPDATE" }
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "A foreign key can accept duplicate values.",
+    "category": "database_management_systems",
+    "correct_answer": true
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which SQL clause is used to sort the result-set?",
+    "category": "database_management_systems",
+    "options": [
+      { "letter": "A", "text": "ORDER BY" },
+      { "letter": "B", "text": "SORT" },
+      { "letter": "C", "text": "GROUP BY" },
+      { "letter": "D", "text": "RANK" }
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which JOIN returns all rows from the left table and the matched rows from the right table?",
+    "category": "database_management_systems",
+    "options": [
+      { "letter": "A", "text": "INNER JOIN" },
+      { "letter": "B", "text": "LEFT JOIN" },
+      { "letter": "C", "text": "FULL JOIN" },
+      { "letter": "D", "text": "RIGHT JOIN" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "fill_in_blanks",
+    "question_text": "A _____ is a virtual table based on the result-set of an SQL statement.",
+    "category": "database_management_systems",
+    "correct_answer": "view"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which command is used to add a new row into a table?",
+    "category": "database_management_systems",
+    "options": [
+      { "letter": "A", "text": "INSERT" },
+      { "letter": "B", "text": "ADD" },
+      { "letter": "C", "text": "APPEND" },
+      { "letter": "D", "text": "UPDATE" }
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which SQL function returns the number of rows in a table?",
+    "category": "database_management_systems",
+    "options": [
+      { "letter": "A", "text": "SUM()" },
+      { "letter": "B", "text": "COUNT()" },
+      { "letter": "C", "text": "TOTAL()" },
+      { "letter": "D", "text": "ROWS()" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "The UPDATE command can be used to change existing data in a table.",
+    "category": "database_management_systems",
+    "correct_answer": true
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which SQL keyword is used to avoid duplicate values in the result set?",
+    "category": "database_management_systems",
+    "options": [
+      { "letter": "A", "text": "UNIQUE" },
+      { "letter": "B", "text": "DISTINCT" },
+      { "letter": "C", "text": "NO DUPLICATES" },
+      { "letter": "D", "text": "ONLY" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "The DELETE command removes table structure and its data.",
+    "category": "database_management_systems",
+    "correct_answer": false
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "What is the default sorting order of ORDER BY?",
+    "category": "database_management_systems",
+    "options": [
+      { "letter": "A", "text": "Descending" },
+      { "letter": "B", "text": "Alphabetical" },
+      { "letter": "C", "text": "Ascending" },
+      { "letter": "D", "text": "Chronological" }
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "question_type": "fill_in_blanks",
+    "question_text": "______ SQL command is used to remove all records from a table but not the structure.",
+    "category": "database_management_systems",
+    "correct_answer": "TRUNCATE"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which data model organizes data in a tree-like structure?",
+    "category": "database_management_systems",
+    "options": [
+      { "letter": "A", "text": "Relational" },
+      { "letter": "B", "text": "Hierarchical" },
+      { "letter": "C", "text": "Network" },
+      { "letter": "D", "text": "Object-Oriented" }
+    ],
+    "correct_answer": "B"
+  },
+  {
     "question_type": "true_false",
     "question_text": "SQL stands for Structured Query Language.",
     "category": "database_management_systems",
@@ -192,6 +393,192 @@
     "correct_answer": "B"
   },
   {
+    "question_type": "multiple_choice",
+    "question_text": "Which property is used to align text to the center in CSS?",
+    "category": "css",
+    "options": [
+      { "letter": "A", "text": "text-align" },
+      { "letter": "B", "text": "align" },
+      { "letter": "C", "text": "font-align" },
+      { "letter": "D", "text": "center-text" }
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "question_type": "fill_in_blanks",
+    "question_text": "The CSS property used to control the size of text is ___.",
+    "category": "css",
+    "correct_answer": "font-size"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "CSS stands for Cascading Style Sheets.",
+    "category": "css",
+    "correct_answer": true
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which CSS property is used to create space between elements?",
+    "category": "css",
+    "options": [
+      { "letter": "A", "text": "padding" },
+      { "letter": "B", "text": "margin" },
+      { "letter": "C", "text": "spacing" },
+      { "letter": "D", "text": "border-spacing" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "multi_select",
+    "question_text": "Which of the following are valid values for the 'position' property in CSS?",
+    "category": "css",
+    "options": [
+      { "letter": "A", "text": "static" },
+      { "letter": "B", "text": "relative" },
+      { "letter": "C", "text": "float" },
+      { "letter": "D", "text": "fixed" }
+    ],
+    "correct_answers": ["A", "B", "D"]
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "What does the 'z-index' property in CSS control?",
+    "category": "css",
+    "options": [
+      { "letter": "A", "text": "Transparency" },
+      { "letter": "B", "text": "Layer stacking" },
+      { "letter": "C", "text": "Brightness" },
+      { "letter": "D", "text": "Font size" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "The 'padding' property adds space inside an element, between its content and border.",
+    "category": "css",
+    "correct_answer": true
+  },
+  {
+    "question_type": "fill_in_blanks",
+    "question_text": "To round the corners of a box, use the ______________ property.",
+    "category": "css",
+    "correct_answer": "border-radius"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which symbol is used for class selectors in CSS?",
+    "category": "css",
+    "options": [
+      { "letter": "A", "text": "#" },
+      { "letter": "B", "text": "." },
+      { "letter": "C", "text": "*" },
+      { "letter": "D", "text": "&" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "CSS grid allows for layout design using rows and columns.",
+    "category": "css",
+    "correct_answer": true
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which property changes the font of text in CSS?",
+    "category": "css",
+    "options": [
+      { "letter": "A", "text": "font-type" },
+      { "letter": "B", "text": "font-family" },
+      { "letter": "C", "text": "text-font" },
+      { "letter": "D", "text": "font-style" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "fill_in_blanks",
+    "question_text": "To apply a shadow to text, use the __________ property.",
+    "category": "css",
+    "correct_answer": "text-shadow"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which CSS unit is relative to the root element’s font size?",
+    "category": "css",
+    "options": [
+      { "letter": "A", "text": "px" },
+      { "letter": "B", "text": "%" },
+      { "letter": "C", "text": "em" },
+      { "letter": "D", "text": "rem" }
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "question_type": "multi_select",
+    "question_text": "Which of the following are valid font-weight values?",
+    "category": "css",
+    "options": [
+      { "letter": "A", "text": "bold" },
+      { "letter": "B", "text": "400" },
+      { "letter": "C", "text": "italic" },
+      { "letter": "D", "text": "bolder" }
+    ],
+    "correct_answers": ["A", "B", "D"]
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "The 'vh' unit in CSS is based on the height of the viewport.",
+    "category": "css",
+    "correct_answer": true
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which CSS property sets the outer border of an element?",
+    "category": "css",
+    "options": [
+      { "letter": "A", "text": "outline" },
+      { "letter": "B", "text": "border" },
+      { "letter": "C", "text": "margin" },
+      { "letter": "D", "text": "edge" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "fill_in_blanks",
+    "question_text": "To add spacing inside the border of an element, use the __________ property.",
+    "category": "css",
+    "correct_answer": "padding"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which selector targets all <p> elements inside a <div>?",
+    "category": "css",
+    "options": [
+      { "letter": "A", "text": "div > p" },
+      { "letter": "B", "text": "div.p" },
+      { "letter": "C", "text": "p div" },
+      { "letter": "D", "text": "div + p" }
+    ],
+    "correct_answer": "A"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "The CSS 'transition' property allows you to animate changes to CSS properties.",
+    "category": "css",
+    "correct_answer": true
+  },
+  {
+    "question_type": "multi_select",
+    "question_text": "Which of these can be values for 'display' in CSS?",
+    "category": "css",
+    "options": [
+      { "letter": "A", "text": "block" },
+      { "letter": "B", "text": "inline" },
+      { "letter": "C", "text": "flex" },
+      { "letter": "D", "text": "center" }
+    ],
+    "correct_answers": ["A", "B", "C"]
+  },
+  {
     "question_type": "multi_select",
     "question_text": "Which of the following are CSS pseudo-classes?",
     "category": "css",
@@ -262,6 +649,189 @@
       { "letter": "D", "text": "RAM" }
     ],
     "correct_answer": "A"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "What is the main function of the motherboard?",
+    "category": "computer_hardware",
+    "options": [
+      { "letter": "A", "text": "To cool the computer" },
+      {
+        "letter": "B",
+        "text": "To connect and communicate between hardware components"
+      },
+      { "letter": "C", "text": "To store files" },
+      { "letter": "D", "text": "To power the computer" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "An optical drive reads and writes data from CDs and DVDs.",
+    "category": "computer_hardware",
+    "correct_answer": true
+  },
+  {
+    "question_type": "fill_in_blanks",
+    "question_text": "The part of a computer that stores data permanently is the ___.",
+    "category": "computer_hardware",
+    "correct_answer": "hard drive"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which of the following is NOT a type of memory?",
+    "category": "computer_hardware",
+    "options": [
+      { "letter": "A", "text": "RAM" },
+      { "letter": "B", "text": "ROM" },
+      { "letter": "C", "text": "SSD" },
+      { "letter": "D", "text": "CPU" }
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which port is commonly used to connect external storage devices?",
+    "category": "computer_hardware",
+    "options": [
+      { "letter": "A", "text": "VGA" },
+      { "letter": "B", "text": "HDMI" },
+      { "letter": "C", "text": "USB" },
+      { "letter": "D", "text": "LAN" }
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "What type of device is a printer?",
+    "category": "computer_hardware",
+    "options": [
+      { "letter": "A", "text": "Input" },
+      { "letter": "B", "text": "Output" },
+      { "letter": "C", "text": "Processing" },
+      { "letter": "D", "text": "Storage" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "BIOS is firmware that initializes hardware at startup.",
+    "category": "computer_hardware",
+    "correct_answer": true
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which component supplies power to the computer system?",
+    "category": "computer_hardware",
+    "options": [
+      { "letter": "A", "text": "Motherboard" },
+      { "letter": "B", "text": "Battery" },
+      { "letter": "C", "text": "Power Supply Unit (PSU)" },
+      { "letter": "D", "text": "Cooling Fan" }
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "question_type": "fill_in_blanks",
+    "question_text": "The physical housing of all computer components is called the ___.",
+    "category": "computer_hardware",
+    "correct_answer": "case"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which of these is an example of non-volatile memory?",
+    "category": "computer_hardware",
+    "options": [
+      { "letter": "A", "text": "RAM" },
+      { "letter": "B", "text": "ROM" },
+      { "letter": "C", "text": "Cache" },
+      { "letter": "D", "text": "Register" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "What component allows wireless internet access on a computer?",
+    "category": "computer_hardware",
+    "options": [
+      { "letter": "A", "text": "Ethernet port" },
+      { "letter": "B", "text": "Wi-Fi adapter" },
+      { "letter": "C", "text": "GPU" },
+      { "letter": "D", "text": "RAM" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "Cache memory is faster than RAM.",
+    "category": "computer_hardware",
+    "correct_answer": true
+  },
+  {
+    "question_type": "multi_select",
+    "question_text": "Which of the following are types of storage devices?",
+    "category": "computer_hardware",
+    "options": [
+      { "letter": "A", "text": "Hard Disk Drive (HDD)" },
+      { "letter": "B", "text": "Solid State Drive (SSD)" },
+      { "letter": "C", "text": "Keyboard" },
+      { "letter": "D", "text": "USB Flash Drive" }
+    ],
+    "correct_answers": ["A", "B", "D"]
+  },
+  {
+    "question_type": "fill_in_blanks",
+    "question_text": "The CPU processes data and performs ___.",
+    "category": "computer_hardware",
+    "correct_answer": "calculations"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which of these cables is used for internet connection?",
+    "category": "computer_hardware",
+    "options": [
+      { "letter": "A", "text": "HDMI" },
+      { "letter": "B", "text": "Ethernet" },
+      { "letter": "C", "text": "VGA" },
+      { "letter": "D", "text": "Audio" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "The monitor is considered an input device.",
+    "category": "computer_hardware",
+    "correct_answer": false
+  },
+  {
+    "question_type": "multi_select",
+    "question_text": "Which components are found inside a typical CPU?",
+    "category": "computer_hardware",
+    "options": [
+      { "letter": "A", "text": "Control Unit" },
+      { "letter": "B", "text": "ALU" },
+      { "letter": "C", "text": "RAM" },
+      { "letter": "D", "text": "Registers" }
+    ],
+    "correct_answers": ["A", "B", "D"]
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which hardware component stores the BIOS?",
+    "category": "computer_hardware",
+    "options": [
+      { "letter": "A", "text": "RAM" },
+      { "letter": "B", "text": "ROM" },
+      { "letter": "C", "text": "CPU" },
+      { "letter": "D", "text": "HDD" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "A GPU is only used for gaming.",
+    "category": "computer_hardware",
+    "correct_answer": false
   },
   {
     "question_type": "multiple_choice",
@@ -404,6 +974,192 @@
   },
   {
     "question_type": "multiple_choice",
+    "question_text": "What is the most common operating system for desktop computers?",
+    "category": "general_it",
+    "options": [
+      { "letter": "A", "text": "macOS" },
+      { "letter": "B", "text": "Linux" },
+      { "letter": "C", "text": "Windows" },
+      { "letter": "D", "text": "Android" }
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "Phishing is a method used to steal personal information through fake emails.",
+    "category": "general_it",
+    "correct_answer": true
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which file extension is used for Microsoft Word documents?",
+    "category": "general_it",
+    "options": [
+      { "letter": "A", "text": ".xls" },
+      { "letter": "B", "text": ".docx" },
+      { "letter": "C", "text": ".ppt" },
+      { "letter": "D", "text": ".exe" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "What does URL stand for?",
+    "category": "general_it",
+    "options": [
+      { "letter": "A", "text": "Universal Resource Locator" },
+      { "letter": "B", "text": "Unified Routing Location" },
+      { "letter": "C", "text": "Uniform Resource Locator" },
+      { "letter": "D", "text": "Universal Reference Link" }
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "question_type": "fill_in_blanks",
+    "question_text": "A __________ is a collection of web pages located under one domain name.",
+    "category": "general_it",
+    "correct_answer": "website"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which company makes the Chrome browser?",
+    "category": "general_it",
+    "options": [
+      { "letter": "A", "text": "Apple" },
+      { "letter": "B", "text": "Microsoft" },
+      { "letter": "C", "text": "Mozilla" },
+      { "letter": "D", "text": "Google" }
+    ],
+    "correct_answer": "D"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "RAM is permanent memory that stores files on your computer.",
+    "category": "general_it",
+    "correct_answer": false
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which tool would you use to protect your device from viruses?",
+    "category": "general_it",
+    "options": [
+      { "letter": "A", "text": "Firewall" },
+      { "letter": "B", "text": "Text editor" },
+      { "letter": "C", "text": "Antivirus" },
+      { "letter": "D", "text": "Defragmenter" }
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "What is the function of Ctrl + C on most computers?",
+    "category": "general_it",
+    "options": [
+      { "letter": "A", "text": "Paste" },
+      { "letter": "B", "text": "Cut" },
+      { "letter": "C", "text": "Copy" },
+      { "letter": "D", "text": "Close" }
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "question_type": "fill_in_blanks",
+    "question_text": "A __________ is a program that replicates itself and spreads to other computers.",
+    "category": "general_it",
+    "correct_answer": "worm"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "A router is used to print documents.",
+    "category": "general_it",
+    "correct_answer": false
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which of these is an example of cloud storage?",
+    "category": "general_it",
+    "options": [
+      { "letter": "A", "text": "USB Drive" },
+      { "letter": "B", "text": "CD-ROM" },
+      { "letter": "C", "text": "Google Drive" },
+      { "letter": "D", "text": "RAM" }
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "question_type": "multi_select",
+    "question_text": "Which of the following are output devices?",
+    "category": "general_it",
+    "options": [
+      { "letter": "A", "text": "Monitor" },
+      { "letter": "B", "text": "Printer" },
+      { "letter": "C", "text": "Mouse" },
+      { "letter": "D", "text": "Speakers" }
+    ],
+    "correct_answers": ["A", "B", "D"]
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "Cookies are used by websites to store user preferences and data.",
+    "category": "general_it",
+    "correct_answer": true
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which type of software controls the basic operation of a computer?",
+    "category": "general_it",
+    "options": [
+      { "letter": "A", "text": "Utility software" },
+      { "letter": "B", "text": "Application software" },
+      { "letter": "C", "text": "System software" },
+      { "letter": "D", "text": "Entertainment software" }
+    ],
+    "correct_answer": "C"
+  },
+  {
+    "question_type": "fill_in_blanks",
+    "question_text": "____________ is the process of converting data into a secure format to prevent unauthorized access.",
+    "category": "general_it",
+    "correct_answer": "encryption"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "Email attachments can carry viruses.",
+    "category": "general_it",
+    "correct_answer": true
+  },
+  {
+    "question_type": "multiple_choice",
+    "question_text": "Which program is used for creating presentations?",
+    "category": "general_it",
+    "options": [
+      { "letter": "A", "text": "Microsoft Word" },
+      { "letter": "B", "text": "Microsoft PowerPoint" },
+      { "letter": "C", "text": "Excel" },
+      { "letter": "D", "text": "Outlook" }
+    ],
+    "correct_answer": "B"
+  },
+  {
+    "question_type": "true_false",
+    "question_text": "VPNs can help protect your privacy online.",
+    "category": "general_it",
+    "correct_answer": true
+  },
+  {
+    "question_type": "multi_select",
+    "question_text": "Which of the following are internet browsers?",
+    "category": "general_it",
+    "options": [
+      { "letter": "A", "text": "Google Chrome" },
+      { "letter": "B", "text": "Mozilla Firefox" },
+      { "letter": "C", "text": "Microsoft Word" },
+      { "letter": "D", "text": "Safari" }
+    ],
+    "correct_answers": ["A", "B", "D"]
+  },
+  {
+    "question_type": "multiple_choice",
     "question_text": "Which device is used to print documents?",
     "category": "general_it",
     "options": [
@@ -419,5 +1175,5 @@
     "question_text": "Backing up data regularly helps prevent data loss.",
     "category": "general_it",
     "correct_answer": true
-  } 
+  }
 ]

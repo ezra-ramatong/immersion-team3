@@ -73,6 +73,18 @@ npm -v
 
 ---
 
+## 🔗 Accessing the App & Admin Pages
+
+- **Main App (Vite dev server):**  
+  [http://localhost:5173/](http://localhost:5173/)
+
+- **Admin Pages (served by Express backend):**  
+  [http://localhost:3000/admin/questions.html](http://localhost:3000/admin/questions.html)  
+  [http://localhost:3000/admin/dashboard.html](http://localhost:3000/admin/dashboard.html)  
+  [http://localhost:3000/admin/settings.html] (http://localhost:3000/admin/settings.html)
+
+---
+
 ## How to Contribute
 
 1. **Create a new branch** from `main` on your fork:
