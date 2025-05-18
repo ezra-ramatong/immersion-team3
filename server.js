@@ -80,7 +80,6 @@ app.put("/api/quiz-settings", (req, res) => {
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "dist")));
-app.use(cors({ origin: "http://localhost:5173" }));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
