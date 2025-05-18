@@ -1,9 +1,11 @@
 import express from "express";
+import cors from "cors";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 const __filename = fileURLToPath(import.meta.url);
@@ -78,6 +80,7 @@ app.put("/api/quiz-settings", (req, res) => {
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "dist")));
+app.use(cors({ origin: "http://localhost:5173" }));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
