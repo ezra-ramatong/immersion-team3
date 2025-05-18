@@ -1,3 +1,14 @@
+.timer {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+
+  @media (max-width: 600px) {
+    max-width: 90vw;
+    font-size: 1rem;
+  }
+}
+
 .timer-text {
   font-size: 1.8rem;
   font-weight: bold;

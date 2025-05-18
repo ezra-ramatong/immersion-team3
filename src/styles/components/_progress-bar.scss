@@ -4,10 +4,13 @@
 
 .progress-bar {
   width: 100%;
-  height: 30px;
-  background-color: #ddd;
-  border-radius: 4px;
-  overflow: hidden;
+  max-width: 600px;
+  margin: 0 auto;
+
+  @media (max-width: 600px) {
+    max-width: 95vw;
+    height: 10px;
+  }
 }
 
 .progress-bar__fill {

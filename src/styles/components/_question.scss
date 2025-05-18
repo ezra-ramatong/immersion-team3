@@ -2,10 +2,12 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-}
 
+  @media (max-width: 600px) {
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
 
-.question {
   &__number {
     color: #000;
     font-family: "Spline Sans";
@@ -14,6 +16,11 @@
     font-weight: 400;
     line-height: normal;
     text-align: center;
+
+    @media (max-width: 600px) {
+      font-size: 1.1rem;
+      margin-top: 2rem;
+    }
   }
 
   &__content {
@@ -22,6 +29,11 @@
     flex-direction: column;
     margin-top: 2rem;
     gap: 2rem;
+
+    @media (max-width: 600px) {
+      margin-top: 1rem;
+      gap: 1rem;
+    }
   }
 
   &__category {
@@ -31,6 +43,10 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+
+    @media (max-width: 600px) {
+      font-size: 1rem;
+    }
   }
 
   &__name {
@@ -40,5 +56,9 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+
+    @media (max-width: 600px) {
+      font-size: 1.2rem;
+    }
   }
 }

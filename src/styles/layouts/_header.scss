@@ -6,4 +6,12 @@
   gap: 4rem;
   padding-inline: 2vw;
   margin-top: 1.25rem;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-inline: 1vw;
+    align-items: center;
+    justify-content: center;
+  }
 }

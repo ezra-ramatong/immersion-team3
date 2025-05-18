@@ -19,18 +19,38 @@
     justify-content: center;
     padding: 3rem 2rem;
     height: 100%;
+
+    @media (max-width: 900px) {
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1rem;
+      border-radius: 0;
+    }
   }
 
   & > .results__left {
     background: var(--color-coral, #ffe5e0);
     border-top-left-radius: 24px;
     border-bottom-left-radius: 24px;
+
+    @media (max-width: 900px) {
+      border-top-left-radius: 18px;
+      border-bottom-left-radius: 0;
+      border-top-right-radius: 18px;
+    }
   }
 
   & > .results__right {
     background: var(--color-yellow, #ffe066);
     border-top-right-radius: 24px;
     border-bottom-right-radius: 24px;
+
+    @media (max-width: 900px) {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 18px;
+      border-bottom-left-radius: 18px;
+    }
   }
 
   h2 {
@@ -39,6 +59,11 @@
     font-family: "Fraunces", "Outfit", sans-serif;
     margin-bottom: 2rem;
     font-weight: 700;
+
+    @media (max-width: 600px) {
+      font-size: 1.5rem;
+      text-align: center;
+    }
   }
 
   #results-username,
@@ -48,6 +73,11 @@
     margin: 1rem 0;
     font-family: "Fraunces", sans-serif;
     text-align: center;
+
+    @media (max-width: 600px) {
+      font-size: 1.1rem;
+      text-align: center;
+    }
   }
 
   #results-back-btn {
@@ -60,8 +90,43 @@
     font-size: 1.1rem;
     font-family: "Spline Sans", sans-serif;
     cursor: pointer;
+
     &:hover {
       background: #a6c1ee;
     }
+  }
+}
+
+@media (max-width: 900px) {
+  #results-screen {
+    grid-template-columns: 1fr;
+    max-width: 98vw;
+    margin: 2rem auto;
+    border-radius: 18px;
+    justify-items: center;
+    align-items: stretch;
+  }
+
+  .results__left,
+  .results__right {
+    width: 100%;
+    border-radius: 0 !important;
+    padding: 2rem 1rem;
+  }
+
+  .results__left {
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+  }
+
+  .results__right {
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+  }
+
+  h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 1.8rem;
   }
 }
