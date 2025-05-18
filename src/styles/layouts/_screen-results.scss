@@ -4,7 +4,7 @@
   min-height: 80vh;
   background: var(--color-background, #f8fafc);
   border-radius: 24px;
-  box-shadow: 0 4px 24px rgba(79, 140, 255, 0.10);
+  box-shadow: 0 4px 24px rgba(79, 140, 255, 0.1);
   margin: 4rem auto;
   max-width: 900px;
   padding: 0;
@@ -36,7 +36,7 @@
   h2 {
     color: black;
     font-size: 2.2rem;
-    font-family: 'Fraunces', 'Outfit', sans-serif;
+    font-family: "Fraunces", "Outfit", sans-serif;
     margin-bottom: 2rem;
     font-weight: 700;
   }
@@ -46,7 +46,7 @@
     font-size: 1.5rem;
     color: #222;
     margin: 1rem 0;
-    font-family: 'Fraunces', sans-serif;
+    font-family: "Fraunces", sans-serif;
     text-align: center;
   }
 
@@ -55,14 +55,13 @@
     padding: 0.7rem 2.2rem;
     background: var(--color-primary, #1a237e);
     color: black;
-    border: none;
+    border: 3px solid #000;
     border-radius: 8px;
     font-size: 1.1rem;
     font-family: "Spline Sans", sans-serif;
     cursor: pointer;
     &:hover {
-      background: #a6c1ee; 
-      color: #222;
+      background: #a6c1ee;
     }
   }
 }

@@ -1,25 +1,25 @@
-      body {
-        font-family: "Fraunces", serif;
-        background: beige;
-        margin: 0;
-        padding: 0;
-      }
+body {
+  font-family: "Fraunces", serif;
+  background: beige;
+  margin: 0;
+  padding: 0;
+}
 
-      .header-wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px 40px;
-        background-color: beige;
-      }
+.header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background-color: beige;
+}
 
-      .header-wrapper h1 {
-        margin: 0;
-        font-size: 2rem;
-        color: #333;
-        flex-grow: 1;
-        text-align: center;
-      }
+.header-wrapper h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+  flex-grow: 1;
+  text-align: center;
+}
 
 .back-btn {
   position: absolute;
@@ -36,61 +36,61 @@
   justify-content: center;
   font-size: 1.3rem;
 }
-      .back-btn:hover {
-        background: #1a5fd7;
-      }
+.back-btn:hover {
+  background: #1a5fd7;
+}
 
-      .questions-table {
-        width: 95%;
-        margin: 30px auto;
-        border-collapse: separate;
-        border-spacing: 24px 18px;
-      }
+.questions-table {
+  width: 95%;
+  margin: 30px auto;
+  border-collapse: separate;
+  border-spacing: 24px 18px;
+}
 
-      .questions-table th,
-      .questions-table td {
-        background: #fff;
-        border: 2px solid coral;
-        padding: 16px;
-        border-radius: 12px;
-        text-align: left;
-        vertical-align: top;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
-      }
+.questions-table th,
+.questions-table td {
+  background: #fff;
+  border: 2px solid coral;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: left;
+  vertical-align: top;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
 
-      .questions-table th {
-        font-size: 1.1rem;
-        color: coral;
-      }
+.questions-table th {
+  font-size: 1.1rem;
+  color: coral;
+}
 
-      .add-btn {
-        background: none;
-        border: none;
-        color: coral;
-        font-size: 1.2rem;
-        cursor: pointer;
-        margin-left: 8px;
-        transition: color 0.2s;
-      }
+.add-btn {
+  background: none;
+  border: none;
+  color: coral;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: color 0.2s;
+}
 
-      .add-btn:hover {
-        color: rgb(240, 97, 45);
-      }
+.add-btn:hover {
+  color: rgb(240, 97, 45);
+}
 
-      .question-row {
-        font-size: 1rem;
-        color: #222;
-      }
+.question-row {
+  font-size: 1rem;
+  color: #222;
+}
 
-      .answer {
-        color: #888;
-        font-size: 0.95rem;
-        margin-top: 4px;
-      }
+.answer {
+  color: #888;
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
 
-      hr {
-        width: 500px;
-        border: none;
-        border-top: 3px solid coral;
-        margin: 0 auto 30px auto;
-      }
+hr {
+  width: 500px;
+  border: none;
+  border-top: 3px solid coral;
+  margin: 0 auto 30px auto;
+}
