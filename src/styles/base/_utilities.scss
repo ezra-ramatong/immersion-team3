@@ -3,5 +3,17 @@
 }
 
 .active {
-  display: block !important;
+  display: block;
+}
+
+.bg-blue {
+  background: var(--color-blue) !important;
+}
+
+.bg-orange {
+  background: var(--color-orange) !important;
+}
+
+.bg-coral {
+  background: var(--color-coral) !important;
 }

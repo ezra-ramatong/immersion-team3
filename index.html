@@ -1,68 +1,92 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<link rel="icon" type="image/svg+xml" href="/vite.svg" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@100..900&display=swap"
-  rel="stylesheet">
-<title>Vite App</title>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Spline+Sans:wght@300..700&display=swap"
+    rel="stylesheet">
+  <title>Vite App</title>
 </head>
 
 <body>
 
   <!--Start screen-->
-  <div id="start-screen" class="screen active">
-    <!-- Start screen content: user enters name, selects categories -->
-    <header class="header"></header>
-    <section class="welcome-intro">
-      <div class="left-panel">
-        <h1>TECH QUIZ: TEST YOUR KNOWLEDGE AND SKILLS</h1>`
-        <h2>WELCOME TO OUR INTERACTIVE QUIZ</h2>
+  <div id="start-screen" class="screen screen--start active">
+    <section class="screen--start__left">
+      <h1 class="title">Memory Leak</h1>
+      <p class="description">The only place you're allowed to leak memory.</p>
+      <button type="button" class="start-btn button">Get started</button>
+    </section>
+    <section class="screen--start__right">
+      <div class="leaderboard"></div>
+    </section>
 
-        <p>
-          Are you ready to put your tech knowlegde to the test?
-          We have fun tech questions from various tech categories that you can tackle.
-          </br></br>
-          Take our quiz and see where you stand in our leaderboard of previous techies who took the test.
-          With our randomised questions you can take as many tests as you please.
-          </br></br>
-          The tech landscape is a forever changing field, changes rapidly on a daily basis, stay up to
-          date with the technology that impacts our daily lives.
-          </br></br>
-          Test how much you know and remember to have fun!
-        </p>
-
-        <input type="button" class="start-btn" value="TAKE QUIZ">
-      </div>
-
-      <div class="right-panel">
-        <img src="./src/assets/landing-page-side-panel.JPG" alt="right-panel-image">
-      </div>
+    <!--LEAVE BUTTON-->
     </section>
 
   </div>
 
 
   <!--User screen-->
-  <div id="user-info-screen" class="screen hidden">
-    <H3>ENTER YOUR DETAILS</H3>
-    <form id="user-details">
-      <label for="username">Username</label>
-      <input type="text" name="userName" id="userName" required>
+  <div id="user-info-screen" class="screen screen--user hidden">
+    <div class="screen--user__left">
+      <span class="logo">Memory Leak</span>
+      <span>1.</span>
+      <form id="user-details" class="form--user">
+        <h2 class="form--user__title">Identify Yourself</h2>
+        <p class="form--user__description">A short and punchy nickname will do.</p>
+        <input type="text" name="userName" id="userName" required>
+      </form>
+    </div>
 
-      <label for="tech-category">Category</label>
-      <select id="tech-category" name="tech-category" required>
-        <option value="general_it" selected>General IT</option>
-        <option value="database_management_systems">Database Management Systems</option>
-        <option value="css">css</option>
-        <option value="computer_hardware">Computer Hardware</option>
-      </select>
+    <div class="screen--user__right">
+      <span>2.</span>
+      <form id="user-categories" class="form--categories">
+        <h2 class="form--categories__title">Categories</h2>
+        <p class="form--categories__description">Think you’ve got this? Select your categories.</p>
 
-      <input type="button" class="submit-user-info" value="submit">
-    </form>
+        <div class="checkboxes">
+          <div class="checkbox bg-blue">
+            <label for="css">
+              <input type="checkbox" id="css" value="css">
+              CSS
+            </label>
+          </div>
+          <div class="checkbox bg-orange">
+            <label for="computer_hardware">
+              <input type="checkbox" id="computer_hardware" value="computer_hardware">
+              Computer Hardware
+            </label>
+          </div>
+          <div class="checkbox bg-coral">
+            <label for="dbms">
+              <input type="checkbox" id="dbms" value="database_management_systems">
+              Database Management Systems
+            </label>
+          </div>
+          <div class="checkbox bg-blue">
+            <label for="general_it">
+              <input type="checkbox" id="general_it" value="general_it">
+              General IT
+            </label>
+          </div>
+        </div>
+        <!-- <select id="tech-category" name="tech-category" required>
+          <option value="general_it" selected>General IT</option>
+          <option value="database_management_systems">Database Management Systems</option>
+          <option value="css">css</option>
+          <option value="computer_hardware">Computer Hardware</option>
+        </select>
+-->
+        <!-- <input type="button" class="submit-user-info" value="submit"> -->
+        <button type="button" class="submit-user-info">Play</button>
+      </form>
+    </div>
   </div>
 
 
@@ -85,33 +109,32 @@
   <!--Highscore screen-->
   <div id="highscore-screen" class="screen hidden">
     <!-- Start screen content: user enters name, selects categories -->
-  </div>
-  <div class="table-rank" id="leaderboard">
-    <div class="table-header">
-      <h1>Leaderboard</h1>
-      <h4>Choose Category</h4>
-      <select>
-        <option>All Rankings</option>
-        <option>HTML</option>
-        <option>CSS</option>
-        <option>Javascript</option>
-        <option>Gaming and computers</option>
-      </select>
+    <div class="table-rank" id="leaderboard">
+      <div class="table-header">
+        <h1>Leaderboard</h1>
+        <h4>Choose Category</h4>
+        <select>
+          <option>All Rankings</option>
+          <option>HTML</option>
+          <option>CSS</option>
+          <option>Javascript</option>
+          <option>Gaming and computers</option>
+        </select>
+      </div>
+      <div class="table-body">
+        <table>
+          <thead>
+            <tr>
+              <th>Position</th>
+              <th>Player Name</th>
+              <th>Points</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body"></tbody>
+        </table>
+      </div>
     </div>
-    <div class="table-body">
-      <table>
-        <thead>
-          <tr>
-            <th>Position</th>
-            <th>Player Name</th>
-            <th>Points</th>
-          </tr>
-        </thead>
-        <tbody id="leaderboard-body"></tbody>
-      </table>
-    </div>
   </div>
-
   <script type="module" src="/src/main.js"></script>
 </body>
 

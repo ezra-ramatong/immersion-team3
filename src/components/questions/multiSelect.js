@@ -59,7 +59,7 @@ export function createMultiSelectQuestion(
     allOptions.forEach((el) => {
       const letter = el.dataset.optionLetter;
       const isSelected = el.classList.contains("selected");
-      const isCorrect = data.correct_answer.includes(letter);
+      const isCorrect = data.correct_answers.includes(letter);
 
       if (isCorrect) {
         el.classList.add("correct");

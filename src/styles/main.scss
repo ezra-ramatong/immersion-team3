@@ -10,9 +10,13 @@
 
 @use "layouts/header";
 @use "layouts/screen";
+@use "layouts/screen-start";
+@use "layouts/screen-user";
 
 @use "components/option";
 @use "components/multiple-choice";
 @use "components/progress-bar";
 @use "components/timer";
+@use "components/button";
+@use "components/checkbox";
 @use "components/results";

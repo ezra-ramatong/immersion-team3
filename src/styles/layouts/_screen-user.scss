@@ -1,0 +1,118 @@
+.screen--user {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .logo {
+    align-self: start;
+    margin-left: 4rem;
+    color: #000;
+    font-family: Fraunces;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 3rem;
+  }
+
+  &__left,
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-right: 2px solid #000;
+
+    span {
+      color: #000;
+      font-family: var(--ff-primary);
+      font-size: var(--fs-display-xl);
+      font-style: normal;
+      font-weight: var(--fw-md);
+      line-height: normal;
+      display: inline-block;
+      /* align-self: center; */
+      margin-top: 10%;
+    }
+  }
+
+  &__right {
+    margin: 11%;
+    border: none;
+  }
+
+
+}
+
+.form--user,
+.form--categories {
+  margin-top: 2rem;
+
+  &__title {
+    color: #000;
+    font-family: var(--ff-title);
+    font-size: var(--fs-display-xl);
+    font-style: normal;
+    font-weight: var(--fw-b);
+    line-height: normal;
+  }
+
+  &__description {
+    color: #000;
+    font-family: Fraunces;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+}
+
+.form--user input {
+  margin-top: 5rem;
+  background: var(--color-background);
+  width: 476px; // TODO: USE PADDING FOR RESPONSIVENESS
+  padding: 0.5rem;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 3px solid #000;
+  font-size: var(--fs-text-xl);
+}
+
+.form--categories {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    text-align: center;
+  }
+
+  &__description {
+    margin-top: 0.7rem;
+  }
+
+  label {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    color: #000;
+    font-family: "Spline Sans";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .checkboxes {
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  button {
+    margin-top: 4rem;
+    align-self: center;
+  }
+}
