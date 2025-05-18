@@ -42,15 +42,19 @@ submitBtn.onclick = async () => {
     user.numQuestions = settings.numQuestions;
 
     // Fetch and assign category-specific questions
-    const questions = await quizService.getQuestionsByCategory(category);
+    let questions = await quizService.getQuestionsByCategory(category);
     console.log(questions);
     if (!questions.length) {
       alert("No questions found for this category. Please try another.");
       return;
     }
 
+    if (settings.numQuestions && questions.length > settings.numQuestions) {
+      questions = questions.sort(() => Math.random() - 0.5).slice(0, settings.numQuestions);
+    }
+
     user.questions = questions;
-    // user.numQuestions = questions.length;
+    user.numQuestions = questions.length;
 
     // Optionally save user to localStorage
     localStorageService.saveUser(user);
