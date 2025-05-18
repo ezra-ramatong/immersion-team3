@@ -1,5 +1,12 @@
 import { addClasses, selectElements } from "../../utils/dom.js";
 
+// Track the current user for answer handling
+let currentUser = null;
+
+export function setCurrentUser(user) {
+  currentUser = user;
+}
+
 /**
  * Handles user selecting an option answer.
  * @param {HTMLElement} selectedEl - The clicked option element.
@@ -33,8 +40,9 @@ export function handleOptionAnswer(
     el.classList.add("locked");
   });
 
-  if (answerContext.isCorrect) {
+  if (answerContext.isCorrect && currentUser) {
     incrementScore();
+    currentUser.correctAnswers++;
   }
 
   setTimeout(onComplete, 1500);
@@ -55,8 +63,10 @@ export function handleInputAnswer(inputEl, onComplete, answerContext) {
   const feedbackMsg = document.createElement("div");
   feedbackMsg.classList.add("feedback");
 
-  if (userAnswer === correctAnswer) {
+  if (userAnswer === correctAnswer && currentUser) {
     incrementScore();
+    currentUser.correctAnswers++;
+
     addClasses(inputEl, ["correct"]);
     feedbackMsg.textContent = "Correct!";
     feedbackMsg.classList.add("feedback--correct");

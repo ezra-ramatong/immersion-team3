@@ -20,7 +20,9 @@ export function createMultiSelectQuestion(
   timePerQuestion,
 ) {
   const container = createElement("div", ["multi-select__container"]);
-  let answered = false;
+  
+  let answered = false; 
+
 
   const optionsContainer = createElement("div", ["options__container"]);
 
@@ -75,6 +77,20 @@ export function createMultiSelectQuestion(
     answered = true;
 
     timer.clear();
+
+    const allOptions = selectElements(".option", optionsContainer);
+    const selected = Array.from(allOptions)
+      .filter((el) => el.classList.contains("selected"))
+      .map((el) => el.dataset.optionLetter);
+    const correct = data.correct_answer || data.correct_answers;
+    const isCorrect =
+      Array.isArray(correct) &&
+      selected.length === correct.length &&
+      selected.every((val) => correct.includes(val)) &&
+      correct.every((val) => selected.includes(val));
+    if (isCorrect && window.currentUser) {
+      window.currentUser.correctAnswers++;
+    }
 
     markAnswers();
 

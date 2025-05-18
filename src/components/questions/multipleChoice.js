@@ -38,6 +38,10 @@ export function createMultipleChoiceQuestion(
 
       timer.clear();
 
+      if (option.letter === data.correct_answer && window.currentUser) {
+        window.currentUser.correctAnswers++;
+      }
+
       markAnswers(optionDiv, data.correct_answer, optionsContainer, "letter");
 
       setTimeout(onNext, 1500);
