@@ -13,6 +13,8 @@
 @use "layouts/screen-start";
 @use "layouts/screen-user";
 @use "layouts/quiz";
+@use "layouts/screen-results";
+
 
 @use "components/option";
 @use "components/question";
@@ -23,8 +25,5 @@
 @use "components/button";
 @use "components/checkbox";
 
-@use "components/results";
 @use "components/points";
-
-@use "layouts/screen-results";
 
