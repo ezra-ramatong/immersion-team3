@@ -92,4 +92,18 @@ export class User {
   set correctAnswers(val) {
     this.#correctAnswers = val;
   }
+
+  toString() {
+    return {
+      userName: this.#userName,
+      score: this.#score,
+      numQuestions: this.#numQuestions,
+      timePerQuestion: this.#timePerQuestion,
+      category: this.#category,
+      questions: this.#questions,
+      currentQuestionIndex: this.#currentQuestionIndex,
+      highScores: this.#highScores,
+      correctAnswers: this.#correctAnswers,
+    };
+  }
 }

@@ -20,7 +20,7 @@ const startBtn = selectElement(".start-btn");
 
 // Navigation: go to user info screen
 startBtn.onclick = () => {
-  showPage("user-info-screen");
+  //showPage("user-info-screen");
 };
 
 // Handle user submission
@@ -37,11 +37,12 @@ submitBtn.onclick = async () => {
     return;
   }
 
-  /* // Basic validation
+  // Basic validation
+  /*
   if (!username || !category) {
     alert("Please enter your username and select a category.");
     return;
-  } */
+  }*/
 
   const user = new User(username, selectedCategories);
 
