@@ -76,13 +76,10 @@ npm -v
 ## 🔗 Accessing the App & Admin Pages
 
 - **Main App (Vite dev server):**  
-  [http://localhost:5173/](http://localhost:5173/)
+  [https://immersion-team3.onrender.com](https://immersion-team3.onrender.com)
 
 - **Admin Pages (served by Express backend):**  
-  [http://localhost:3000/admin/questions.html](http://localhost:3000/admin/questions.html)  
-  [http://localhost:3000/admin/dashboard.html](http://localhost:3000/admin/dashboard.html)  
-  [http://localhost:3000/admin/settings.html] (http://localhost:3000/admin/settings.html)
-
+  [https://immersion-team3.onrender.com/admin/dashboard.html](https://immersion-team3.onrender.com/admin/dashboard.html)
 ---
 
 ## How to Contribute
