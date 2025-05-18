@@ -51,9 +51,6 @@ submitBtn.onclick = async () => {
     user.timePerQuestion = settings.timePerQuestion || 30;
     user.numQuestions = settings.numQuestions;
 
-    console.log(user.timePerQuestion);
-    console.log(user.numQuestions);
-
     // Fetch and assign category-specific questions
     const questions =
       await quizService.getQuestionsByCategories(selectedCategories);
@@ -85,3 +82,11 @@ submitBtn.onclick = async () => {
     alert("An error occurred while starting the quiz. Please try again.");
   }
 };
+
+// Results screen logic
+const resultsBackBtn = document.getElementById("results-back-btn");
+if (resultsBackBtn) {
+  resultsBackBtn.onclick = () => {
+    showPage("start-screen");
+  };
+}

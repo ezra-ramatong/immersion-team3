@@ -46,6 +46,23 @@
         position: static;
       }
 
+      .back-btn {
+        position: absolute;
+        left: 32px;
+        top: 32px;
+        text-decoration: none;
+        background: #4f8cff;
+        color: #fff;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(79, 140, 255, 0.12);
+        font-size: 1.3rem;
+      }
+
       .questions-number,
       .timer {
         margin: 32px auto 0 auto;
@@ -155,7 +172,16 @@
   </head>
   <body>
     <div class="container">
-      <div class="header">Quiz Settings</div>
+      <div class="header">
+        <a
+          href="dashboard.html"
+          class="back-btn"
+          aria-label="Back to dashboard"
+        >
+          <i class="fa fa-arrow-left"></i>
+        </a>
+        Quiz Settings
+      </div>
       <!-- Add the plus buttons and input fields in your HTML -->
       <div class="questions-number">
         <p>Questions Quantity:</p>
@@ -191,7 +217,7 @@
         <div
           style="display: flex; align-items: center; justify-content: center"
         >
-          <div class="time-limit" id="timeLimit">
+          <div class="time-limit" id="timePerQuestion">
             <div class="circle" aria-label="Previous time">&#60;</div>
             <div class="circle" aria-label="Next time">&#62;</div>
           </div>

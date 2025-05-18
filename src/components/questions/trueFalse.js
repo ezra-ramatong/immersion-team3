@@ -30,6 +30,11 @@ export function createTrueFalseQuestion(data, onNext, onTick, timePerQuestion) {
 
       timer.clear();
 
+      const correctValue = String(data.correct_answer).toLowerCase() === "true";
+      if (opt.value === correctValue && window.currentUser) {
+        window.currentUser.correctAnswers++;
+      }
+
       markAnswers(optionDiv, data.correct_answer, optionsContainer, "value");
 
       setTimeout(onNext, 1500);

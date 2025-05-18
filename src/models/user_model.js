@@ -10,6 +10,7 @@ export class User {
   #questions = [];
   #currentQuestionIndex = 0;
   #highScores = [];
+  #correctAnswers = 0;
 
   constructor(userName, category) {
     this.#userName = userName;
@@ -48,6 +49,10 @@ export class User {
     return this.#highScores;
   }
 
+  get correctAnswers() {
+    return this.#correctAnswers;
+  }
+
   get currentQuestion() {
     return this.#questions[this.#currentQuestionIndex];
   }
@@ -82,5 +87,9 @@ export class User {
 
   set highScores(highScores) {
     this.#highScores = highScores;
+  }
+
+  set correctAnswers(val) {
+    this.#correctAnswers = val;
   }
 }
