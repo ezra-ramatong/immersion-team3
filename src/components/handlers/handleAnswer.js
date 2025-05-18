@@ -1,5 +1,4 @@
 import { addClasses, selectElements } from "../../utils/dom.js";
-import { incrementScore } from "../../state.js";
 
 /**
  * Handles user selecting an option answer.

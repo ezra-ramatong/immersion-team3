@@ -1,4 +1,3 @@
-import { getState } from "../../state.js";
 import { createElement, appendChildren } from "../../utils/dom.js";
 import { startQuestionTimer } from "../../utils/timer.js";
 import { handleAnswer } from "../handlers/handleAnswer.js";
@@ -9,11 +8,14 @@ import { handleAnswer } from "../handlers/handleAnswer.js";
  * @param {Function} onNext - Callback when question is complete (timeout or submission).
  * @returns {HTMLElement} - The rendered DOM element for the question.
  */
-export function createFillInBlanksQuestion(data, onNext, onTick) {
+export function createFillInBlanksQuestion(
+  data,
+  onNext,
+  onTick,
+  timePerQuestion,
+) {
   const container = createElement("div", ["fill-in-blanks__container"]);
   let answered = false;
-
-  const { timePerQuestion } = getState().settings;
 
   const input = createElement("input", ["fill-in-blanks__input"], {
     type: "text",

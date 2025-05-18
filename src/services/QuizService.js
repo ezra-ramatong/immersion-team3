@@ -1,4 +1,4 @@
-export class UserService {
+export default class QuizService {
   getAllQuestions() {
     return fetch("http://localhost:3000/api/questions")
       .then((res) => res.json())

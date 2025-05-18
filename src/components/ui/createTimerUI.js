@@ -6,6 +6,7 @@ import { createElement } from "../../utils/dom.js";
  * @returns {{ element: HTMLElement, update: (remaining: number) => void }}
  */
 export function createTimerUI(totalSeconds) {
+  console.log("TOTALSECONDS: ", totalSeconds);
   const timerText = createElement("p", ["timer-text"]);
   timerText.textContent = totalSeconds.toString();
 
