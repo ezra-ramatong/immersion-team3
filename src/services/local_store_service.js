@@ -32,11 +32,11 @@ export class LocalStorageService {
         correctAnswers: correctAnswers,
       });
     }
-  
+
     return players
       .filter((player) => player.category[0] === category)
       .sort(function (player1, player2) {
-        return player2.score - player1.score;
+        return player2.correctAnswers - player1.correctAnswers;
       });
   }
 }

@@ -29,7 +29,11 @@ startBtn.onclick = () => {
 categoryOption.addEventListener("change", function () {
   const leaderboard = localStorageService.getLeaderboard(categoryOption.value);
   const resultsTableBody = selectElement("#results-body");
-  console.log(leaderboard);
+  rank = 0;
+
+  while (resultsTableBody.firstChild) {
+    resultsTableBody.removeChild(resultsTableBody.firstChild);
+  }
 
   leaderboard.forEach((userResult) => {
     const row = document.createElement("tr");
