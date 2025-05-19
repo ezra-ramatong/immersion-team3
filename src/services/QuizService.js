@@ -1,6 +1,6 @@
 export default class QuizService {
   getAllQuestions() {
-    return fetch("http://localhost:3000/api/questions")
+    return fetch("/api/questions")
       .then((res) => res.json())
       .then((data) => {
         return data;
@@ -22,7 +22,7 @@ export default class QuizService {
   } */
 
   getQuestionsByCategories(categories) {
-    return fetch("http://localhost:3000/api/questions")
+    return fetch("/api/questions")
       .then((res) => res.json())
       .then((data) => {
         return data.filter((question) =>
@@ -35,7 +35,7 @@ export default class QuizService {
   }
 
   getSettings() {
-    return fetch("http://localhost:3000/api/quiz-settings")
+    return fetch("/api/quiz-settings")
       .then((res) => res.json())
       .then((data) => {
         return data;

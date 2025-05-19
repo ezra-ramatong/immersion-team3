@@ -30,7 +30,6 @@ categoryOption.addEventListener("change", function () {
   const leaderboard = localStorageService.getLeaderboard(categoryOption.value);
   const resultsTableBody = selectElement("#results-body");
   rank = 0;
-  console.log(leaderboard);
 
   while (resultsTableBody.firstChild) {
     resultsTableBody.removeChild(resultsTableBody.firstChild);
