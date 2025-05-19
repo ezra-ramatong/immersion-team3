@@ -22,8 +22,24 @@
       <p class="description">The only place you're allowed to leak memory.</p>
       <button type="button" class="start-btn button">Get started</button>
     </section>
+    
     <section class="screen--start__right">
-      <div class="leaderboard"></div>
+      <div class="leaderboard">
+        <select name="leaderboard-category" class="leaderboard-category">
+          <option value="css">CSS</option>
+          <option value="computer_hardware">Computer Hardware</option>
+          <option value="database_management_systems">Database Management Sytems</option>
+          <option value="general_it">General IT</option>
+        </select>
+        <table id="results">
+          <thead>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Score</th>
+          </thead>
+          <tbody id="results-body"></tbody>
+        </table>
+      </div>
     </section>
 
     <!--LEAVE BUTTON-->
