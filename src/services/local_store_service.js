@@ -3,30 +3,35 @@ import { User } from "../models/user_model.js";
 export class LocalStorageService {
   saveUser(user) {
     if (user instanceof User) {
-      localStorage.setItem(user.userName.toString(), JSON.stringify(user));
+      localStorage.setItem(user.userName, JSON.stringify(user.toString()));
     }
   }
 
   retrieveUser(user) {
     if (user instanceof User) {
-      return localStorage.getItem(user.userName.toString());
+      return JSON.parse(localStorage.getItem(user.userName));
     }
   }
 
-  getLeaderboard() {
-    const leaderBoard = [];
+  getLeaderboard(category) {
+    const players = [];
 
     for (let i = 0; i < localStorage.length; i++) {
-      const userName = localStorage.getItem(localStorage.key(i));
-      const score = localStorage.getItem(localStorage.key(i));
+      const { userName, category, score } = JSON.parse(
+        localStorage.getItem(localStorage.key(i)),
+      );
 
-      leaderBoard.push(userName);
-      leaderBoard.push(score);
+      players.push({
+        userName: userName,
+        category: category,
+        score: score,
+      });
     }
 
-    return leaderBoard;
-    /*return leaderBoard.sort(function (userOne, userTwo) {
-      return userTwo.score - userOne.score;
-    });*/
+    return players
+      .filter((player) => player.category === category)
+      .sort(function (player1, player2) {
+        return player2.correctAnswers - player1.correctAnswers;
+      });
   }
 }

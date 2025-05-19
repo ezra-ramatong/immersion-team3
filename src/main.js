@@ -38,11 +38,12 @@ submitBtn.onclick = async (event) => {
     return;
   }
 
-  /* // Basic validation
+  // Basic validation
+  /*
   if (!username || !category) {
     alert("Please enter your username and select a category.");
     return;
-  } */
+  }*/
 
   const user = new User(username, selectedCategories);
 
@@ -69,10 +70,10 @@ submitBtn.onclick = async (event) => {
 
     user.questions = limitedQuestions;
     // user.numQuestions = questions.length;
-
+ 
     // Optionally save user to localStorage
     localStorageService.saveUser(user);
-
+    
     // Navigate to quiz screen
     showPage("quiz-screen");
 
