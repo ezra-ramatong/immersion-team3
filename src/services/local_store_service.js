@@ -13,25 +13,30 @@ export class LocalStorageService {
     }
   }
 
+  setTheScore(user, score) {
+    user.score = score;
+    this.saveUser(user);
+  }
+
   getLeaderboard(category) {
     const players = [];
 
     for (let i = 0; i < localStorage.length; i++) {
-      const { userName, category, score } = JSON.parse(
+      const { userName, category, correctAnswers } = JSON.parse(
         localStorage.getItem(localStorage.key(i)),
       );
 
       players.push({
         userName: userName,
         category: category,
-        score: score,
+        correctAnswers: correctAnswers,
       });
     }
-
+  
     return players
-      .filter((player) => player.category === category)
+      .filter((player) => player.category[0] === category)
       .sort(function (player1, player2) {
-        return player2.correctAnswers - player1.correctAnswers;
+        return player2.score - player1.score;
       });
   }
 }

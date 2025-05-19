@@ -13,15 +13,32 @@ import { shuffleArray } from "./utils/shuffle.js";
 // Initialize services
 const localStorageService = new LocalStorageService();
 const quizService = new QuizService();
+let rank = 0;
 
 // DOM elements
 const submitBtn = selectElement(".submit-user-info");
 const startBtn = selectElement(".start-btn");
+const categoryOption = selectElement(".leaderboard-category");
 
 // Navigation: go to user info screen
 startBtn.onclick = () => {
   showPage("user-info-screen");
 };
+
+//When leaderboard category is selected
+categoryOption.addEventListener("change", function () {
+  const leaderboard = localStorageService.getLeaderboard(categoryOption.value);
+  const resultsTableBody = selectElement("#results-body");
+  console.log(leaderboard);
+
+  leaderboard.forEach((userResult) => {
+    const row = document.createElement("tr");
+    row.innerHTML = `<td>${++rank}</td>
+      <td>${userResult.userName}</td>
+      <td>${userResult.correctAnswers}</td>`;
+    resultsTableBody.appendChild(row);
+  });
+});
 
 // Handle user submission
 submitBtn.onclick = async (event) => {
@@ -70,10 +87,10 @@ submitBtn.onclick = async (event) => {
 
     user.questions = limitedQuestions;
     // user.numQuestions = questions.length;
- 
+
     // Optionally save user to localStorage
     localStorageService.saveUser(user);
-    
+
     // Navigate to quiz screen
     showPage("quiz-screen");
 
