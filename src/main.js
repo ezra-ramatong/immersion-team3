@@ -5,9 +5,9 @@ import "./styles/main.scss";
 import { showPage } from "./router.js";
 import { User } from "./models/user_model.js";
 import { LocalStorageService } from "./services/local_store_service.js";
-import QuizService from "./services/QuizService.js"; // renamed from UserService
+import QuizService from "./services/QuizService.js";
 import { selectElement } from "./utils/dom.js";
-import { startQuiz } from "./screens/quizScreen.js"; // assumed quiz logic starts here
+import { startQuiz } from "./screens/quizScreen.js";
 import { shuffleArray } from "./utils/shuffle.js";
 
 // Initialize services
@@ -48,7 +48,6 @@ categoryOption.addEventListener("change", function () {
 submitBtn.onclick = async (event) => {
   event.preventDefault();
   const username = selectElement("#userName").value;
-  // const category = selectElement("#tech-category").value;
   const checkboxes = document.querySelectorAll(
     '#user-categories input[type="checkbox"]:checked',
   );
@@ -59,22 +58,13 @@ submitBtn.onclick = async (event) => {
     return;
   }
 
-  // Basic validation
-  /*
-  if (!username || !category) {
-    alert("Please enter your username and select a category.");
-    return;
-  }*/
-
   const user = new User(username, selectedCategories);
 
   try {
-    // Get quiz settings (e.g. time per question)
     const settings = await quizService.getSettings();
     user.timePerQuestion = settings.timePerQuestion || 30;
     user.numQuestions = settings.numQuestions;
 
-    // Fetch and assign category-specific questions
     const questions =
       await quizService.getQuestionsByCategories(selectedCategories);
     console.log(questions);
@@ -90,15 +80,11 @@ submitBtn.onclick = async (event) => {
     );
 
     user.questions = limitedQuestions;
-    // user.numQuestions = questions.length;
 
-    // Optionally save user to localStorage
     localStorageService.saveUser(user);
 
-    // Navigate to quiz screen
     showPage("quiz-screen");
 
-    // Start the quiz logic
     startQuiz(user);
   } catch (error) {
     console.error("Error loading quiz data:", error);
@@ -106,66 +92,9 @@ submitBtn.onclick = async (event) => {
   }
 };
 
-// Results screen logic
 const resultsBackBtn = document.getElementById("results-back-btn");
 if (resultsBackBtn) {
   resultsBackBtn.onclick = () => {
     showPage("start-screen");
   };
-}
-
-// DEV ONLY: Skip to quiz screen with dummy user and question
-const isDevMode = false;
-
-if (isDevMode) {
-  const dummyUser = new User("DevUser", ["general_it"]);
-  dummyUser.timePerQuestion = 3000000;
-  dummyUser.numQuestions = 10;
-  dummyUser.currentQuestionIndex = 0;
-
-  dummyUser.questions = [
-    {
-      question_text: "What does HTML stand for?",
-      question_type: "multiple_choice",
-      category: "general_it",
-      correct_answer: "B",
-      options: [
-        { letter: "A", text: "HighText Machine Language" },
-        { letter: "B", text: "HyperText Markup Language" },
-        { letter: "C", text: "HyperTool Multi Language" },
-        { letter: "D", text: "Hyperlink and Text Markup Language" },
-      ],
-    },
-    {
-      question_type: "true_false",
-      question_text: "SQL stands for Structured Query Language.",
-      category: "database_management_systems",
-      correct_answer: true,
-    },
-    {
-      question_type: "fill_in_blanks",
-      question_text: "In CSS, the property used to make text bold is ___.",
-      category: "css",
-      correct_answer: "font-weight",
-    },
-    {
-      question_type: "multi_select",
-      question_text: "Which of the following are valid CSS units?",
-      category: "css",
-      options: [
-        { letter: "A", text: "px" },
-        { letter: "B", text: "%" },
-        { letter: "C", text: "em" },
-        { letter: "D", text: "pt" },
-      ],
-      correct_answers: ["A", "B", "C", "D"],
-    },
-  ];
-
-  // Show quiz screen right away
-  showPage("quiz-screen");
-
-  import("./screens/quizScreen.js").then(({ startQuiz }) => {
-    startQuiz(dummyUser);
-  });
 }

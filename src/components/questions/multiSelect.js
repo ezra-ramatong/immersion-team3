@@ -30,7 +30,7 @@ export function createMultiSelectQuestion(
     const optionDiv = createOptionUI(option, index);
 
     optionDiv.addEventListener("click", () => {
-      if (answered) return; // disable selection after answering
+      if (answered) return;
       optionDiv.classList.toggle("selected");
     });
 
@@ -54,7 +54,6 @@ export function createMultiSelectQuestion(
         el.classList.add("incorrect");
       } else if (!isSelected && isCorrect) {
         el.classList.add("missed");
-        //TODO: Should add text
       }
       el.classList.add("locked");
     });

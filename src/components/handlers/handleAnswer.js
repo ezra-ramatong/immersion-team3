@@ -1,6 +1,5 @@
 import { addClasses, selectElements } from "../../utils/dom.js";
 
-// Track the current user for answer handling
 let currentUser = null;
 
 export function setCurrentUser(user) {

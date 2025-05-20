@@ -10,6 +10,7 @@ function selectByCategory(players, category) {
       (category === "Gaming and computers" && player.category === "Gaming"),
   );
 }
+
 /* function to insert the data from local storage to UI of the leaderboard */
 function insertsDataOnBoard(players) {
   leaderBoardEl.innerHTML = "";

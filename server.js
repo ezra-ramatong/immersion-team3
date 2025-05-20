@@ -68,13 +68,19 @@ app.put("/api/quiz-settings", (req, res) => {
       }
     }
     const mergedSettings = { ...existingSettings, ...newSettings };
-    fs.writeFile(QUIZ_SETTINGS_PATH, JSON.stringify(mergedSettings, null, 2), (err) => {
-      if (err) {
-        console.error("Error writing quizSettings.json:", err);
-        return res.status(500).json({ error: "Failed to save quiz settings" });
-      }
-      res.json({ message: "Quiz settings updated successfully!" });
-    });
+    fs.writeFile(
+      QUIZ_SETTINGS_PATH,
+      JSON.stringify(mergedSettings, null, 2),
+      (err) => {
+        if (err) {
+          console.error("Error writing quizSettings.json:", err);
+          return res
+            .status(500)
+            .json({ error: "Failed to save quiz settings" });
+        }
+        res.json({ message: "Quiz settings updated successfully!" });
+      },
+    );
   });
 });
 
@@ -84,7 +90,6 @@ app.use(express.static(path.join(__dirname, "dist")));
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "dist", "index.html"));
 });
-
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

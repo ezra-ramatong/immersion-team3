@@ -1,6 +1,6 @@
 export default function formatCategory(category) {
   return category
-    .split("_") // Split at underscores
+    .split("_")
     .map((word) => {
       if (word.length <= 3) {
         return word.toUpperCase();

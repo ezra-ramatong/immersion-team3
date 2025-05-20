@@ -1,4 +1,10 @@
-/* Function to select high scores according to category */
+/**
+ * Function to select high scores according to category 
+ * @param {Array} players - Array of players
+ * @param {string} category - Category to filter players by
+ *  
+ * @returns {Array} - Filtered array of players  
+ */
 function selectByCategory(players, category) {
   if (category === "All Rankings") {
     return players;
@@ -10,7 +16,12 @@ function selectByCategory(players, category) {
       (category === "Gaming and computers" && player.category === "Gaming"),
   );
 }
-/* function to insert the data from local storage to UI of the leaderboard */
+
+/** 
+ * function to insert the data from local storage to UI of the leaderboard 
+ *
+ * @param {Array} players - Array of players
+*/
 function insertsDataOnBoard(players) {
   leaderBoardEl.innerHTML = "";
 

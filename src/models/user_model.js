@@ -2,9 +2,6 @@ export class User {
   #userName;
   #score = 0;
   #numQuestions = 0;
-
-  /*set to default 30seconds admin can configure the time  and create a method to expose it 
-  to the front-end*/
   #timePerQuestion;
   #category;
   #questions = [];

@@ -1,6 +1,6 @@
 export default class QuizService {
   getAllQuestions() {
-    return fetch("/api/questions")
+    return fetch("http://localhost:3000/api/questions")
       .then((res) => res.json())
       .then((data) => {
         return data;
@@ -10,19 +10,8 @@ export default class QuizService {
       });
   }
 
-  /* getQuestionsByCategory(category) {
-    return fetch("/api/questions")
-      .then((res) => res.json())
-      .then((data) => {
-        return data.filter((question) => question.category === category);
-      })
-      .catch((error) => {
-        throw new Error(error);
-      });
-  } */
-
   getQuestionsByCategories(categories) {
-    return fetch("/api/questions")
+    return fetch("http://localhost:3000/api/questions")
       .then((res) => res.json())
       .then((data) => {
         return data.filter((question) =>
@@ -35,7 +24,7 @@ export default class QuizService {
   }
 
   getSettings() {
-    return fetch("/api/quiz-settings")
+    return fetch("http://localhost:3000/api/quiz-settings")
       .then((res) => res.json())
       .then((data) => {
         return data;
