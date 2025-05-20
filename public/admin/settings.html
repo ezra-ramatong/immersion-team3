@@ -8,11 +8,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <script src="settings.js" defer></script>
     <link rel="stylesheet" href="settings.css" />
+    <script src="js/settings.js" defer></script>
   </head>
+
   <body>
     <div class="container">
+
       <div class="header">
         <a
           href="dashboard.html"
@@ -23,16 +25,17 @@
         </a>
         Quiz Settings
       </div>
-      <!-- Add the plus buttons and input fields in your HTML -->
+
       <div class="questions-number">
         <p>Questions Quantity:</p>
-        <div
-          style="display: flex; align-items: center; justify-content: center"
-        >
+      
+        <div style="display: flex; align-items: center; justify-content: center">
+          
           <div class="quantity-button" id="quantityButton">
             <div class="circle" aria-label="Previous quantity">&#60;</div>
             <div class="circle" aria-label="Next quantity">&#62;</div>
           </div>
+
           <button
             id="addQuestionBtn"
             class="plus-btn"
@@ -41,6 +44,7 @@
           >
             +
           </button>
+
           <input
             id="customQuestionInput"
             type="number"
@@ -51,20 +55,30 @@
             placeholder="Custom"
           />
         </div>
-        <div id="questionHelper" style="font-size: 13px; color: black; margin-top: 4px; display: none;">Enter a custom number (1-100) and press <b>Enter</b></div>
+
+        <div id="questionHelper" style="font-size: 13px; color: black; margin-top: 4px; display: none;">
+          Enter a custom number (1-100) and press <b>Enter</b>
+        </div>
       </div>
+
       <div class="timer">
         <p>Time limit:</p>
-        <div
-          style="display: flex; align-items: center; justify-content: center"
-        >
+        <div style="display: flex; align-items: center; justify-content: center">
+
           <div class="time-limit" id="timePerQuestion">
             <div class="circle" aria-label="Previous time">&#60;</div>
             <div class="circle" aria-label="Next time">&#62;</div>
           </div>
-          <button id="addTimeBtn" class="plus-btn" title="Add custom time" aria-label="Add custom time">
+
+          <button
+            id="addTimeBtn"
+            class="plus-btn"
+            title="Add custom time"
+            aria-label="Add custom time"
+          >
             +
           </button>
+
           <input
             id="customTimeInput"
             type="number"
@@ -75,10 +89,16 @@
             placeholder="Custom (s)"
           />
         </div>
-        <div id="timeHelper" style="font-size: 13px; color: black; margin-top: 4px; display: none;">Enter a custom time in seconds (1-600) and press <b>Enter</b></div>
+
+        <div id="timeHelper" style="font-size: 13px; color: black; margin-top: 4px; display: none;">
+          Enter a custom time in seconds (1-600) and press <b>Enter</b>
+        </div>
       </div>
+
       <div id="selectedValues" style="margin-top: 18px; font-size: 16px; color: black; font-weight: 500;"></div>
+
       <button class="save-button" aria-label="Save settings">Save</button>
+
       <div id="saveMsg" style="margin-top: 16px; font-size: 15px; display: none;"></div>
     </div>
   </body>
